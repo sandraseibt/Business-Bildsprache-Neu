@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotelfotografin Deutschland · Hotelfotografie Rhein-Main · Sandra Seibt</title>
+  <meta name="description" content="Hotelfotografin Sandra Seibt — deutschlandweit und international buchbar. Hofgut Georgenthal, Casa Rosa Villa Olhão. Bilder, die Gäste buchen lassen."/>
+  <meta name="keywords" content="Hotelfotografin, Hotelfotografie Deutschland, Hotelfotografie Frankfurt, Hotelfotografie Rhein-Main, Hotelfotografie Taunus, Hotel Fotograf buchen, Hotelfotografie international, Sandra Seibt Fotografin"/>
+  <meta property="og:title" content="Hotelfotografin Deutschland · Sandra Seibt"/>
+  <meta property="og:description" content="Bilder, die dein Hotel spürbar machen — und Gäste buchen lassen. Deutschlandweit & international."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://www.business-bildsprache.de/hotelfotografie.html"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+
+    /* ── LOKALE FARB-OVERRIDES ────────────────── */
+    :root {
+      --bg-dark:   #EAE0D4;
+      --bg-dark-2: #E0D4C4;
+    }
+
+    /* ── HERO FULLSCREEN ──────────────────────── */
+    .hh-hero {
+      position: relative;
+      height: 80vh;
+      min-height: 560px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+    }
+    .hh-hero-img {
+      position: absolute;
+      inset: 0;
+    }
+    .hh-hero-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      transform: scale(1.04);
+      animation: heroZoom 12s ease forwards;
+    }
+    @keyframes heroZoom {
+      to { transform: scale(1); }
+    }
+    .hh-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(20,12,8,.88) 0%,
+        rgba(20,12,8,.45) 45%,
+        rgba(20,12,8,.15) 100%
+      );
+    }
+    .hh-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 5vw 7rem;
+      max-width: 900px;
+    }
+    .hh-hero-eyebrow {
+      font-size: .7rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .hh-hero-h {
+      font-family: var(--f-serif);
+      font-size: clamp(3rem, 7vw, 7rem);
+      font-weight: 300;
+      line-height: 1.02;
+      color: #FAF7F2;
+      margin-bottom: 2rem;
+    }
+    .hh-hero-h em {
+      font-style: italic;
+      color: rgba(250,247,242,.6);
+    }
+    .hh-hero-sub {
+      color: rgba(250,247,242,.65);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      max-width: 520px;
+      margin-bottom: 3rem;
+    }
+    .hh-hero-cta { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .btn-light {
+      display: inline-block;
+      padding: .9rem 2.2rem;
+      border: 1px solid rgba(250,247,242,.4);
+      color: rgba(250,247,242,.85);
+      border-radius: 3rem;
+      font-size: .78rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background .3s, border-color .3s;
+    }
+    .btn-light:hover {
+      background: rgba(250,247,242,.1);
+      border-color: rgba(250,247,242,.7);
+    }
+    .hh-hero-scroll {
+      position: absolute;
+      bottom: 3rem;
+      right: 5vw;
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(250,247,242,.4);
+      writing-mode: vertical-rl;
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+    }
+    .hh-hero-scroll::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 50px;
+      background: rgba(250,247,242,.25);
+    }
+
+    /* ── AHA QUOTE ────────────────────────────── */
+    .hh-aha {
+      background: var(--bg-dark);
+      padding: 8rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hh-aha::before {
+      content: '❝';
+      font-family: var(--f-serif);
+      font-size: 28rem;
+      color: rgba(125,51,72,.07);
+      position: absolute;
+      top: -6rem;
+      left: 2rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .hh-aha-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hh-aha-quote {
+      font-family: var(--f-serif);
+      font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+    .hh-aha-quote span { color: var(--gold); }
+    .hh-aha-source {
+      font-size: .75rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--white-3);
+      margin-bottom: 3.5rem;
+    }
+    .hh-aha-body {
+      color: var(--white-2);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      max-width: 620px;
+      border-left: 2px solid var(--gold);
+      padding-left: 2rem;
+    }
+    .hh-aha-body strong { color: var(--ink); font-weight: 400; }
+
+    /* ── EMOTION SPLIT ────────────────────────── */
+    .hh-emotion {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 55vh;
+    }
+    .hh-emotion-img {
+      overflow: hidden;
+      position: relative;
+    }
+    .hh-emotion-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 8s ease;
+    }
+    .hh-emotion-img:hover img { transform: scale(1.03); }
+    .hh-emotion-text {
+      background: var(--bg-2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 5rem;
+    }
+    .hh-emotion-eyebrow {
+      font-size: .68rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .hh-emotion-h {
+      font-family: var(--f-serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1.8rem;
+    }
+    .hh-emotion-h em { font-style: italic; color: var(--gold); }
+    .hh-emotion-p {
+      color: var(--white-2);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+
+    /* ── PAIN ─────────────────────────────────── */
+    .hh-pain {
+      background: var(--bg);
+      padding: 8rem 0;
+    }
+    .hh-pain-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 5rem;
+    }
+    .hh-pain-eyebrow {
+      font-size: .68rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .hh-pain-h {
+      font-family: var(--f-serif);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+    }
+    .hh-pain-h em { font-style: italic; color: var(--gold); }
+    .hh-pain-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .hh-pain-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 1.2rem;
+      padding: 2.5rem;
+    }
+    .hh-pain-card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+    .hh-pain-card h3 {
+      font-family: var(--f-serif);
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hh-pain-card p {
+      color: var(--white-2);
+      font-size: .88rem;
+      line-height: 1.8;
+    }
+
+    /* ── GALLERY ──────────────────────────────── */
+    .hh-gallery {
+      background: var(--bg-dark);
+      padding: 7rem 0;
+    }
+    .hh-gallery-intro {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding: 0 2rem;
+    }
+    .hh-gallery-h {
+      font-family: var(--f-serif);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--ink);
+    }
+    .hh-gallery-h em { font-style: italic; color: var(--gold); }
+    .hh-gallery-sub {
+      color: var(--white-3);
+      margin-top: 1rem;
+      font-size: .92rem;
+    }
+    .hh-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      gap: .6rem;
+      padding: 0 .6rem;
+    }
+    .hh-g1 { grid-column: 1/5; grid-row: 1/3; }
+    .hh-g2 { grid-column: 5/9; grid-row: 1/2; }
+    .hh-g3 { grid-column: 9/13; grid-row: 1/2; }
+    .hh-g4 { grid-column: 5/7; grid-row: 2/3; }
+    .hh-g5 { grid-column: 7/10; grid-row: 2/3; }
+    .hh-g6 { grid-column: 10/13; grid-row: 2/3; }
+
+    .hh-gallery-item {
+      overflow: hidden;
+      border-radius: .6rem;
+      position: relative;
+    }
+    .hh-gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .8s cubic-bezier(.16,1,.3,1);
+      min-height: 200px;
+    }
+    .hh-gallery-item:hover img { transform: scale(1.06); }
+    .hh-gallery-item-label {
+      position: absolute;
+      bottom: .8rem;
+      left: .8rem;
+      background: rgba(20,12,8,.65);
+      backdrop-filter: blur(8px);
+      padding: .3rem .8rem;
+      border-radius: 2rem;
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(250,247,242,.8);
+    }
+
+    /* ── FOOD SECTION ─────────────────────────── */
+    .hh-food {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .hh-food-text {
+      background: var(--bg-dark-2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3.5rem 4rem;
+    }
+    .hh-food-eyebrow {
+      font-size: .68rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .hh-food-h {
+      font-family: var(--f-serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .hh-food-h em { font-style: italic; color: var(--gold); }
+    .hh-food-p {
+      color: var(--white-2);
+      line-height: 1.9;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .hh-food-img {
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .hh-food-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 8s ease;
+    }
+    .hh-food-img:hover img { transform: scale(1.03); }
+
+    /* ── WORKFLOW ─────────────────────────────── */
+    .hh-work {
+      background: var(--bg);
+      padding: 8rem 0;
+    }
+    .hh-work-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 5rem;
+    }
+    .hh-work-eyebrow {
+      font-size: .68rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .hh-work-h {
+      font-family: var(--f-serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+    }
+    .hh-work-h em { font-style: italic; color: var(--gold); }
+    .hh-work-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .hh-work-step {
+      padding: 3rem 2.5rem;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 1.2rem;
+      transition: background .4s, transform .4s;
+    }
+    .hh-work-step:hover { background: var(--surface); transform: translateY(-4px); }
+    .hh-work-num {
+      font-family: var(--f-display);
+      font-size: 3.5rem;
+      color: var(--gold);
+      opacity: .2;
+      line-height: 1;
+      margin-bottom: 1.2rem;
+    }
+    .hh-work-step h3 {
+      font-family: var(--f-serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin-bottom: .8rem;
+    }
+    .hh-work-step p { color: var(--white-2); font-size: .9rem; line-height: 1.8; }
+
+    /* ── TESTIMONIAL ──────────────────────────── */
+    .hh-testi {
+      background: var(--bg-dark);
+      padding: 8rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hh-testi-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hh-testi-stars {
+      color: var(--gold);
+      font-size: 1.1rem;
+      letter-spacing: .3em;
+      margin-bottom: 2.5rem;
+    }
+    .hh-testi-q {
+      font-family: var(--f-serif);
+      font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.5;
+      margin-bottom: 2.5rem;
+    }
+    .hh-testi-q span { color: var(--gold); }
+    .hh-testi-name {
+      font-size: .75rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--white-3);
+    }
+
+    /* ── CTA ──────────────────────────────────── */
+    .hh-cta {
+      background: var(--bg);
+      padding: 9rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hh-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, var(--gold-pale) 0%, transparent 70%);
+    }
+    .hh-cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 0 2rem; }
+    .hh-cta-eyebrow {
+      font-size: .68rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .hh-cta-h {
+      font-family: var(--f-serif);
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.08;
+      margin-bottom: 1.5rem;
+    }
+    .hh-cta-h em { font-style: italic; color: var(--gold); }
+    .hh-cta-p {
+      color: var(--white-2);
+      line-height: 1.85;
+      margin-bottom: 3rem;
+      font-size: 1rem;
+    }
+    .hh-cta-note {
+      display: block;
+      margin-top: 1.5rem;
+      font-size: .76rem;
+      color: var(--white-3);
+      letter-spacing: .06em;
+    }
+    .btn-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ── RESPONSIVE ───────────────────────────── */
+    @media(max-width: 1000px) {
+      .hh-emotion { grid-template-columns: 1fr; }
+      .hh-emotion-img { min-height: 55vw; }
+      .hh-emotion-text { padding: 4rem 2rem; }
+      .hh-food { grid-template-columns: 1fr; }
+      .hh-food-img { min-height: 55vw; order: -1; }
+      .hh-food-text { padding: 4rem 2rem; }
+      .hh-pain-cards { grid-template-columns: 1fr; }
+      .hh-work-steps { grid-template-columns: 1fr; }
+      .hh-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .hh-g1,.hh-g2,.hh-g3,.hh-g4,.hh-g5,.hh-g6 {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+    @media(max-width: 600px) {
+      .hh-hero-content { padding: 0 1.5rem 5rem; }
+      .hh-gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Business <span>Bildsprache</span></a>
+    <ul class="nav-links">
+      <li><a href="methode.html">Methode</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="hotelfotografie.html" style="color:var(--gold)">Hotelfotografie</a></li>
+      <li><a href="quiz.html" style="color:var(--gold)">Quiz ✦</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Gespräch anfragen</a>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────── -->
+  <section class="hh-hero">
+    <div class="hh-hero-img">
+      <img src="Bilder/BIlder Hotel/sandraseibtfotografie-1-2.JPG"
+           alt="Hotelfotografie · Sandra Seibt · Rhein-Main"/>
+    </div>
+    <div class="hh-hero-overlay"></div>
+    <div class="hh-hero-content">
+      <span class="hh-hero-eyebrow r">Hotelfotografie · Rhein-Main</span>
+      <h1 class="hh-hero-h r">
+        Ein Hotel ist mehr<br/>als ein Haus<br/><em>mit Betten.</em>
+      </h1>
+      <p class="hh-hero-sub r">
+        Deine Gäste buchen das Gefühl — bevor sie ankommen.
+        Ich sorge dafür, dass sie es schon auf dem ersten Foto spüren.
+      </p>
+      <div class="hh-hero-cta r">
+        <a href="kontakt.html" class="btn-fill">3 Ideen für dein Haus — kostenlos</a>
+        <a href="#galerie" class="btn-light">Bilder ansehen</a>
+      </div>
+    </div>
+    <div class="hh-hero-scroll">Weiter scrollen</div>
+  </section>
+
+  <!-- ── AHA MOMENT ────────────────────────────── -->
+  <section class="hh-aha">
+    <div class="hh-aha-inner">
+      <p class="hh-aha-quote r">
+        „<span>Das ist unser Hotel?</span><br/>
+        Ich wusste gar nicht, dass<br/>wir so schöne Räume haben."
+      </p>
+      <p class="hh-aha-source r">— Mitarbeiterin des Hotels · nach den ersten Fotos</p>
+      <p class="hh-aha-body r">
+        Das ist das Schönste, was mir je gesagt wurde — nicht von einem Gast,
+        sondern von jemandem, der <strong>täglich dort arbeitet.</strong>
+        Wir gewöhnen uns an das Schöne, das uns umgibt.
+        Unsere Gäste tun das nicht — sie sehen es zum ersten Mal.
+        <br/><br/>
+        Meine Arbeit ist es, genau diesen ersten Blick einzufangen.
+        <strong>Den Moment, bevor die Routine beginnt.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── EMOTION SPLIT ──────────────────────────── -->
+  <section class="hh-emotion">
+    <div class="hh-emotion-img r-left">
+      <img src="Bilder/BIlder Hotel/Hotel.jpg"
+           alt="Hotelzimmer Atmosphäre · Sandra Seibt"/>
+    </div>
+    <div class="hh-emotion-text">
+      <span class="hh-emotion-eyebrow r">Was Bilder wirklich tun</span>
+      <h2 class="hh-emotion-h r">
+        Dein Gast entscheidet<br/>in drei Sekunden.<br/><em>Ich sorge dafür,<br/>dass er bleibt.</em>
+      </h2>
+      <p class="hh-emotion-p r">
+        Kein Mensch liest sich ein Hotel durch.
+        Er fühlt es — beim Scrollen, beim Klicken, beim ersten Bild.
+        Strahlen deine Fotos Wärme aus? Sehnsucht? Das Gefühl von ankommen und loslassen?
+      </p>
+      <p class="hh-emotion-p r">
+        Wenn nicht, scrollt er weiter. Nicht weil dein Hotel nicht gut ist —
+        sondern weil die Bilder es nicht zeigen.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── PAIN ───────────────────────────────────── -->
+  <section class="hh-pain">
+    <div class="container">
+      <div class="hh-pain-intro">
+        <h2 class="hh-pain-h r">
+          Was schlechte Hotelfotos<br/><em>wirklich kosten.</em>
+        </h2>
+      </div>
+      <div class="hh-pain-cards">
+        <div class="hh-pain-card r">
+          <span class="hh-pain-card-icon">📱</span>
+          <h3>Der erste Eindruck entscheidet</h3>
+          <p>Buchungsplattformen, Instagram, deine Website — überall sieht dein Gast zuerst das Bild. Kalte, leere Fotos ohne Seele kosten Buchungen, bevor du auch nur einen Satz sagen konntest.</p>
+        </div>
+        <div class="hh-pain-card r">
+          <span class="hh-pain-card-icon">🔁</span>
+          <h3>Austauschbarkeit ist dein größter Feind</h3>
+          <p>Auf Booking.com sehen alle Hotels gleich aus. Wer nicht durch echte Bildsprache heraussticht, wird über den Preis verglichen — und verliert.</p>
+        </div>
+        <div class="hh-pain-card r">
+          <span class="hh-pain-card-icon">💛</span>
+          <h3>Deine DNA ist unsichtbar</h3>
+          <p>Jedes Hotel hat eine Geschichte, einen Charakter, ein Gefühl. Smartphone-Fotos zeigen Räume — aber keine Seele. Die Gäste, die du wirklich willst, suchen genau das.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALERIE ────────────────────────────────── -->
+  <section class="hh-gallery" id="galerie">
+    <div class="hh-gallery-intro">
+      <h2 class="hh-gallery-h r">Räume, die man<br/><em>spüren</em> will.</h2>
+      <p class="hh-gallery-sub r">Hotel Georgenthal · Taunus</p>
+    </div>
+    <div class="hh-gallery-grid">
+      <div class="hh-gallery-item hh-g1 r">
+        <img src="Bilder/BIlder Hotel/sandraseibtfotografie-7.JPG" alt="Hotelzimmer Details"/>
+        <span class="hh-gallery-item-label">Zimmer</span>
+      </div>
+      <div class="hh-gallery-item hh-g2 r">
+        <img src="Bilder/BIlder Hotel/sandraseibtfotografie-3.JPG" alt="Elegante Suite"/>
+        <span class="hh-gallery-item-label">Suite</span>
+      </div>
+      <div class="hh-gallery-item hh-g3 r">
+        <img src="Bilder/BIlder Hotel/sandraseibtfotografie-5.JPG" alt="Design-Detail"/>
+        <span class="hh-gallery-item-label">Detail</span>
+      </div>
+      <div class="hh-gallery-item hh-g4 r">
+        <img src="Bilder/BIlder Hotel/sandraseibtfotografie-2 2.JPG" alt="Bett & Morgenkaffee"/>
+        <span class="hh-gallery-item-label">Morgen</span>
+      </div>
+      <div class="hh-gallery-item hh-g5 r">
+        <img src="Bilder/BIlder Hotel/sandraseibtfotografie-6.JPG" alt="Zimmer Charakter"/>
+        <span class="hh-gallery-item-label">Atmosphäre</span>
+      </div>
+      <div class="hh-gallery-item hh-g6 r">
+        <img src="Bilder/BIlder Hotel/sandraseibtfotografie-11.JPG" alt="Helles Zimmer"/>
+        <span class="hh-gallery-item-label">Licht</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PORTUGAL ─────────────────────────────────── -->
+  <section style="padding:4rem 0;background:var(--bg);">
+    <div class="container">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;">
+        <span style="font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);">Casa Rosa Villa · Olhão, Portugal</span>
+        <span style="height:1px;flex:1;background:var(--border);"></span>
+        <span style="font-size:.7rem;color:var(--white-3);">Internationale Hotelfotografie</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;">
+        <div style="border-radius:.8rem;overflow:hidden;aspect-ratio:3/4;"><img src="Bilder/BIlder Hotel/portugal/IMG_2988.JPG" alt="Casa Rosa Villa Olhão Portugal" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></div>
+        <div style="border-radius:.8rem;overflow:hidden;aspect-ratio:3/4;"><img src="Bilder/BIlder Hotel/portugal/IMG_2991.JPG" alt="Casa Rosa Villa Portugal" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></div>
+        <div style="border-radius:.8rem;overflow:hidden;aspect-ratio:3/4;"><img src="Bilder/BIlder Hotel/portugal/IMG_2994.JPG" alt="Casa Rosa Villa Algarve" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></div>
+        <div style="border-radius:.8rem;overflow:hidden;aspect-ratio:3/4;"><img src="Bilder/BIlder Hotel/portugal/IMG_2996.jpg" alt="Casa Rosa Villa Olhão Terrasse" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></div>
+      </div>
+      <p style="margin-top:1.2rem;font-size:.85rem;color:var(--white-3);text-align:center;">Sandra Seibt ist deutschlandweit und international buchbar.</p>
+    </div>
+  </section>
+
+  <!-- ── FOOD ───────────────────────────────────── -->
+  <section class="hh-food">
+    <div class="hh-food-text">
+      <span class="hh-food-eyebrow r">Restaurant & Kulinarik</span>
+      <h2 class="hh-food-h r">
+        Dein Gast isst<br/>zuerst<br/><em>mit den Augen.</em>
+      </h2>
+      <p class="hh-food-p r">
+        Das beste Gericht verliert gegen ein schlechtes Foto.
+        Ich fotografiere Essen so, dass man es riechen und schmecken will —
+        bevor man auch nur reserviert hat.
+      </p>
+      <p class="hh-food-p r">
+        Warmes Licht. Echte Teller. Kein Styling-Overload.
+        Authentisch wie deine Küche — nur sichtbar.
+      </p>
+    </div>
+    <div class="hh-food-img r-right">
+      <img src="Bilder/BIlder Hotel/IMG_6659.JPG" alt="Food Fotografie Hotel · Sandra Seibt"/>
+    </div>
+  </section>
+
+  <!-- ── WIE ICH ARBEITE ────────────────────────── -->
+  <section class="hh-work">
+    <div class="container">
+      <div class="hh-work-intro">
+        <span class="hh-work-eyebrow r">Meine Arbeitsweise</span>
+        <h2 class="hh-work-h r">
+          Ich fotografiere nicht Räume.<br/>
+          <em>Ich erzähle, wie es sich anfühlt,<br/>bei dir zu sein.</em>
+        </h2>
+      </div>
+      <div class="hh-work-steps">
+        <div class="hh-work-step r">
+          <div class="hh-work-num">01</div>
+          <h3>Dein Haus wirklich kennen</h3>
+          <p>Bevor ich die Kamera auspacke, lerne ich dein Hotel kennen. Wer sind deine Gäste? Was ist das Gefühl, das sie suchen? Welche Räume tragen eure Geschichte?</p>
+        </div>
+        <div class="hh-work-step r">
+          <div class="hh-work-num">02</div>
+          <h3>Licht, Moment, Seele</h3>
+          <p>Ich fotografiere mit natürlichem Licht, zur goldenen Stunde, wenn die Räume atmen. Keine überbelichteten Weitwinkelshots. Echte Atmosphäre, die Lust aufs Kommen macht.</p>
+        </div>
+        <div class="hh-work-step r">
+          <div class="hh-work-num">03</div>
+          <h3>Bilder, die buchen lassen</h3>
+          <p>Die fertigen Fotos erzählen eine Geschichte — und ziehen genau die Gäste an, die zu euch passen. Für Website, Booking-Portale, Social Media, Print.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIAL ────────────────────────────── -->
+  <section class="hh-testi">
+    <div class="hh-testi-inner">
+      <div class="hh-testi-stars r">✦ ✦ ✦ ✦ ✦</div>
+      <p class="hh-testi-q r">
+        „Egal ob Food, Räume oder Menschen —
+        <span>Sie haben unsere DNA aufgesaugt</span>
+        und in Ihren Fotos in Szene gesetzt.
+        Ihre Fotos mit der Emotionalität und der Bildsprache passen
+        einfach wunderbar zu unserem Produkt."
+      </p>
+      <p class="hh-testi-name r">— Hotel Georgenthal · Taunus</p>
+    </div>
+  </section>
+
+  <!-- ── CTA ───────────────────────────────────── -->
+  <section class="hh-cta">
+    <div class="hh-cta-inner">
+      <span class="hh-cta-eyebrow r">Jetzt anfangen</span>
+      <h2 class="hh-cta-h r">
+        Ich schicke dir<br/><em>3 konkrete Ideen</em><br/>für dein Haus.
+      </h2>
+      <p class="hh-cta-p r">
+        Kein großes Angebot. Kein Druck. Nur ein kurzes Gespräch —
+        und du siehst, was in deinem Hotel steckt,
+        das du vielleicht selbst schon längst nicht mehr siehst.
+      </p>
+      <div class="btn-row r">
+        <a href="kontakt.html" class="btn-fill">Kostenloses Erstgespräch</a>
+        <a href="portfolio.html" class="btn-ghost">Mehr Arbeiten sehen</a>
+      </div>
+      <span class="hh-cta-note r">30 Minuten · Unverbindlich · Per Video oder vor Ort im Rhein-Main-Gebiet</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Business <span>Bildsprache</span> · Sandra Seibt</span>
+        <div class="footer-links">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="https://www.instagram.com/sandra.seibt" target="_blank">Instagram</a>
+        </div>
+        <span class="footer-copy">© 2026 Sandra Seibt</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+  (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ring.style.width='56px';ring.style.height='56px';});
+    el.addEventListener('mouseleave',()=>{ring.style.width='36px';ring.style.height='36px';});
+  });
+  document.getElementById('nav').classList.add('scrolled');
+  window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60));
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:.1});
+  document.querySelectorAll('.r,.r-left,.r-right').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcher Sichtbarkeits-Typ bist du? · Sandra Seibt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', Arial, sans-serif; background: #F5F0E8; color: #2A1E14; }
+
+    nav { background: #fff; border-bottom: 1px solid #E0D8CC; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 1rem; color: #2A1E14; text-decoration: none; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; letter-spacing: .04em; }
+    .nav-logo span { color: #7D3348; }
+    .nav-cta { background: #7D3348; color: #fff; padding: .5rem 1.2rem; border-radius: 2rem; text-decoration: none; font-family: Arial, sans-serif; font-size: .8rem; }
+
+    .hero { text-align: center; padding: 6rem 1.5rem 4rem; }
+    .eyebrow { font-family: Arial, sans-serif; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: #7D3348; display: block; margin-bottom: 1rem; }
+    .hero h1 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 300; line-height: 1.2; color: #2A1E14; margin-bottom: 1rem; overflow: visible; padding-bottom: .15em; }
+    .hero h1 em { font-style: italic; color: #7D3348; }
+    .hero p { font-family: Arial, sans-serif; color: #6A5040; max-width: 460px; margin: 0 auto; line-height: 1.7; font-size: .95rem; }
+
+    .wrap { max-width: 680px; margin: 0 auto; padding: 1.5rem 1.5rem 5rem; }
+
+    .progress-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .bar { flex: 1; height: 4px; background: #D8D0C4; border-radius: 2px; overflow: hidden; }
+    .fill { height: 100%; background: #7D3348; border-radius: 2px; transition: width .4s ease; width: 0%; }
+    .ptext { font-family: Arial, sans-serif; font-size: .72rem; color: #8A7060; white-space: nowrap; text-transform: uppercase; letter-spacing: .06em; }
+
+    .card { background: #fff; border-radius: 1.4rem; padding: 2.5rem; box-shadow: 0 6px 30px rgba(42,30,20,.09); }
+
+    .frage { font-size: clamp(1.2rem, 3vw, 1.7rem); font-weight: 400; color: #2A1E14; line-height: 1.35; margin-bottom: 1.8rem; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; }
+    .abtn { background: #F5F0E8; border: 1.5px solid #D8D0C4; border-radius: .9rem; padding: 1.1rem 1rem; cursor: pointer; text-align: left; transition: all .2s; }
+    .abtn:hover { background: #F5EAEd; border-color: #7D3348; transform: translateY(-2px); }
+    .aicon { font-size: 1.4rem; display: block; margin-bottom: .35rem; }
+    .alabel { display: block; font-family: Georgia, serif; font-size: .95rem; color: #2A1E14; margin-bottom: .15rem; }
+    .asub { display: block; font-family: Arial, sans-serif; font-size: .73rem; color: #8A7060; line-height: 1.4; }
+
+    .rtag { font-family: Arial, sans-serif; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: #7D3348; display: block; margin-bottom: .7rem; }
+    .rh { font-size: clamp(1.4rem, 3.5vw, 2.2rem); font-weight: 400; color: #2A1E14; line-height: 1.25; margin-bottom: 1.2rem; }
+    .rh em { font-style: italic; color: #7D3348; }
+    .rdesc { font-family: Arial, sans-serif; color: #4A3828; line-height: 1.8; font-size: .93rem; margin-bottom: 1rem; }
+    .rbox { background: #F5EAEd; border-left: 3px solid #7D3348; border-radius: 0 .7rem .7rem 0; padding: 1.1rem 1.3rem; margin: 1.2rem 0; font-family: Arial, sans-serif; font-size: .88rem; color: #2A1E14; line-height: 1.75; }
+    .rbox strong { color: #7D3348; display: block; margin-bottom: .3rem; }
+    .rcta-h { font-size: 1.2rem; color: #2A1E14; margin: 1.8rem 0 .4rem; }
+    .rcta-h em { font-style: italic; color: #7D3348; }
+    .rcta-p { font-family: Arial, sans-serif; font-size: .85rem; color: #8A7060; margin-bottom: 1.3rem; }
+    .btn1 { display: inline-block; background: #7D3348; color: #fff; padding: .85rem 1.8rem; border-radius: 2rem; text-decoration: none; font-family: Arial, sans-serif; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; margin-right: .8rem; margin-bottom: .5rem; }
+    .btn2 { background: none; border: 1.5px solid #D8D0C4; color: #6A5040; padding: .85rem 1.8rem; border-radius: 2rem; cursor: pointer; font-family: Arial, sans-serif; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase; }
+    .btn2:hover { border-color: #7D3348; color: #7D3348; }
+
+    footer { text-align: center; padding: 2rem; font-family: Arial, sans-serif; font-size: .8rem; color: #8A7060; border-top: 1px solid #E0D8CC; }
+    footer a { color: #7D3348; }
+
+    @media(max-width: 540px) { .grid { grid-template-columns: 1fr; } .card { padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Business <span>Bildsprache</span></a>
+  <a href="kontakt.html" class="nav-cta">Gespräch anfragen</a>
+</nav>
+
+<div class="hero">
+  <span class="eyebrow">Kostenloser Selbsttest</span>
+  <h1>Welcher<br/><em>Sichtbarkeits-Typ</em><br/>bist du?</h1>
+  <p>7 Fragen · 2 Minuten · Dein persönliches Ergebnis mit konkreten Tipps für deine Bildsprache</p>
+</div>
+
+<div class="wrap">
+  <div class="progress-row">
+    <div class="bar"><div class="fill" id="fill"></div></div>
+    <span class="ptext" id="ptext">Frage 1 von 7</span>
+  </div>
+  <div class="card" id="card"></div>
+</div>
+
+<footer>© 2026 Sandra Seibt · <a href="index.html">Business Bildsprache</a> · <a href="kontakt.html">Kontakt</a></footer>
+
+<script>
+var fragen = [
+  { text: "Wie fühlst du dich meistens vor der Kamera?", antworten: [
+    { icon: "🌿", label: "Eher ruhig, beobachtend", sub: "Ich brauche Zeit, um anzukommen" },
+    { icon: "✨", label: "Lebendig, locker, spontan", sub: "Ich bin schnell im Flow" },
+    { icon: "📋", label: "Konzentriert, angespannt", sub: "Ich will es richtig machen" },
+    { icon: "🤍", label: "Offen, aber schnell unsicher", sub: "Ich mache es, obwohl es mich kostet" }
+  ]},
+  { text: "Welche Bilder fühlen sich für dich am stimmigsten an?", antworten: [
+    { icon: "🌫", label: "Ruhig, reduziert, mit viel Raum", sub: "Stille spricht mehr als Lautstärke" },
+    { icon: "🌊", label: "In Bewegung, lebendig, dynamisch", sub: "Energie ist sichtbar" },
+    { icon: "◻", label: "Klar, strukturiert, ordentlich", sub: "Alles hat seinen Platz" },
+    { icon: "🌸", label: "Nahbar, weich, verbunden", sub: "Wärme vor Perfektion" }
+  ]},
+  { text: "Was fällt dir am schwersten?", antworten: [
+    { icon: "🔇", label: "Mich zeigen, ohne mich zurückzuziehen", sub: "Sichtbarkeit kostet mich Kraft" },
+    { icon: "⏸", label: "Still sein und nicht zu viel machen", sub: "Ich bin schnell zu viel" },
+    { icon: "😌", label: "Locker zu wirken", sub: "Ich nehme alles zu ernst" },
+    { icon: "💬", label: "Mich wirklich zu öffnen", sub: "Nähe macht mich verletzlich" }
+  ]},
+  { text: "Wie beschreiben dich andere?", antworten: [
+    { icon: "🌙", label: "Ruhig, tief, reflektiert", sub: "Du bist selten, aber wenn, dann ganz da" },
+    { icon: "⚡", label: "Offen, energiegeladen, präsent", sub: "Du füllst jeden Raum" },
+    { icon: "🎯", label: "Klar, organisiert, professionell", sub: "Man weiss, woran man bei dir ist" },
+    { icon: "🤗", label: "Warm, empathisch, verbindend", sub: "Bei dir fühlt sich jeder gesehen" }
+  ]},
+  { text: "Was passt am ehesten zu dir?", antworten: [
+    { icon: "🌱", label: "Ich brauche Zeit, um anzukommen", sub: "Tiefe statt Tempo" },
+    { icon: "🔥", label: "Ich bin schnell im Tun", sub: "Warten ist nicht mein Ding" },
+    { icon: "📌", label: "Ich will wissen, was richtig ist", sub: "Orientierung gibt mir Sicherheit" },
+    { icon: "💞", label: "Ich spüre viel, aber zeige es nicht immer", sub: "Innen mehr als aussen" }
+  ]},
+  { text: "Welche Bildsprache wünschst du dir?", antworten: [
+    { icon: "🤍", label: "Eher zurückhaltend", sub: "Weniger ist mehr" },
+    { icon: "🎬", label: "Viel Bewegung, viel Ausdruck", sub: "Ich will spürbar sein" },
+    { icon: "✦", label: "Sehr sauber, sehr korrekt", sub: "Qualität vor Lockerheit" },
+    { icon: "🌻", label: "Freundlich und echt", sub: "Ich will echter werden" }
+  ]},
+  { text: "Was willst du mit deinen Bildern erreichen?", antworten: [
+    { icon: "🧘", label: "Tiefe zeigen", sub: "Da steckt mehr dahinter" },
+    { icon: "💫", label: "Energie zeigen", sub: "Die will ich kennenlernen" },
+    { icon: "🏆", label: "Kompetenz zeigen", sub: "Die weiss, was sie tut" },
+    { icon: "💛", label: "Verbindung schaffen", sub: "Da bin ich richtig" }
+  ]}
+];
+
+var ergebnisse = [
+  { typ: "Der ruhige Typ", emoji: "🌿",
+    h: "Deine Stärke ist nicht Lautstärke — <em>sondern Präsenz.</em>",
+    desc: "Du wirkst ruhig, tief und klar. Menschen vertrauen dir, weil du nicht drängst. Deine Bilder brauchen keine Performance — sie brauchen Stille, Substanz und den Moment, in dem man spürt: Da steckt mehr dahinter.",
+    pain: "Du versuchst oft, mehr Energie zu zeigen — obwohl das gar nicht zu dir passt. Genau das spüren die Menschen.",
+    tipp: "Wenig Bewegung · Viel Raum · Ruhige Bilder · Kein Dauerlächeln\n\nDu musst nicht mehr sein. Du darfst klarer du sein." },
+  { typ: "Der energetische Typ", emoji: "✨",
+    h: "Deine Energie ist kein Problem — <em>sie ist dein stärkster Hebel.</em>",
+    desc: "Du bist präsent, lebendig und spürbar. Wenn du im Flow bist, ziehen dich Menschen automatisch an. Deine Bilder sollten genau das zeigen — den Moment, in dem deine Augen leuchten.",
+    pain: "Du wirst oft zu ruhig fotografiert und wirkst dadurch weniger kraftvoll, als du bist.",
+    tipp: "Bewegung · Interaktion · Echte Momente · Dynamik\n\nDeine Energie ist kein Problem. Sie ist dein stärkster Hebel." },
+  { typ: "Der strukturierte Typ", emoji: "📐",
+    h: "Menschen sehen bei dir sofort: <em>Die weiss, was sie tut.</em>",
+    desc: "Du wirkst klar, fokussiert und professionell. Das ist eine echte Stärke — und gleichzeitig manchmal eine Falle. Denn wenn alles zu korrekt wirkt, verliert es Lebendigkeit.",
+    pain: "Deine Bilder werden oft zu perfekt — und verlieren dabei den Menschen dahinter.",
+    tipp: "Klare Linien · Ruhige Struktur · Kleine, echte Momente einbauen\n\nDu darfst Struktur behalten — und trotzdem weicher werden." },
+  { typ: "Der verbindende Typ", emoji: "💛",
+    h: "Menschen fühlen sich bei dir gesehen — <em>das ist selten und wertvoll.</em>",
+    desc: "Du schaffst Verbindung, bevor du auch nur ein Wort sagst. Menschen öffnen sich dir — weil sie spüren, dass du wirklich zuhörst. Das ist selten. Und unglaublich wertvoll.",
+    pain: "Du wirst oft zu freundlich gezeigt und verlierst dabei Tiefe. Nett — aber nicht greifbar.",
+    tipp: "Echte Nähe · Echte Emotion · Nicht nur nett, sondern ehrlich\n\nDu darfst dich zeigen — nicht nur anpassen." }
+];
+
+var aktFrage = 0;
+var punkte = [0,0,0,0];
+
+function zeigeFrage() {
+  var f = fragen[aktFrage];
+  document.getElementById('fill').style.width = Math.round(aktFrage/fragen.length*100)+'%';
+  document.getElementById('ptext').textContent = 'Frage '+(aktFrage+1)+' von '+fragen.length;
+  var h = '<p class="frage">'+f.text+'</p><div class="grid">';
+  for(var i=0;i<f.antworten.length;i++){
+    var a=f.antworten[i];
+    h+='<button class="abtn" onclick="waehle('+i+')"><span class="aicon">'+a.icon+'</span><span class="alabel">'+a.label+'</span><span class="asub">'+a.sub+'</span></button>';
+  }
+  h+='</div>';
+  document.getElementById('card').innerHTML=h;
+}
+
+function waehle(i){
+  punkte[i]++;
+  aktFrage++;
+  if(aktFrage>=fragen.length){ zeigErgebnis(); } else { zeigeFrage(); }
+}
+
+function zeigErgebnis(){
+  document.getElementById('fill').style.width='100%';
+  document.getElementById('ptext').textContent='Dein Ergebnis';
+  var max=0,w=0;
+  for(var i=0;i<punkte.length;i++){ if(punkte[i]>max){max=punkte[i];w=i;} }
+  var r=ergebnisse[w];
+  var t=r.tipp.replace(/\n/g,'<br>');
+  var h='<span class="rtag">'+r.emoji+' Dein Typ</span>';
+  h+='<h2 class="rh">'+r.typ+'<br>'+r.h+'</h2>';
+  h+='<p class="rdesc">'+r.desc+'</p>';
+  h+='<div class="rbox"><strong>Was oft passiert:</strong>'+r.pain+'</div>';
+  h+='<div class="rbox"><strong>Was für dich funktioniert:</strong>'+t+'</div>';
+  h+='<h3 class="rcta-h">Bereit, das sichtbar zu machen? <em>Lass uns reden.</em></h3>';
+  h+='<p class="rcta-p">30 Minuten. Kostenlos. Ich höre dir zu — und zeige dir, wie deine Bilder wirklich wirken könnten.</p>';
+  h+='<a href="kontakt.html" class="btn1">Kostenloses Gespräch anfragen</a>';
+  h+='<button class="btn2" onclick="neustart()">Quiz wiederholen</button>';h+='<br><br><a href="index.html" style="font-family:Arial,sans-serif;font-size:.82rem;color:#8A7060;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;">← Zurück zur Website</a>';
+  document.getElementById('card').innerHTML=h;
+}
+
+function neustart(){
+  aktFrage=0; punkte=[0,0,0,0];
+  document.getElementById('fill').style.width='0%';
+  zeigeFrage();
+}
+
+zeigeFrage();
+</script>
+</body>
+</html>

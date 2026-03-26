@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcher Sichtbarkeits-Typ bist du? · Business Bildsprache · Sandra Seibt</title>
+  <meta name="description" content="Finde in 7 Fragen heraus, welcher Sichtbarkeits-Typ du bist — und wie du dich authentisch und wirkungsvoll zeigen kannst."/>
+  <style>/* ══════════════════════════════════════════════
+   BUSINESS BILDSPRACHE · LIGHT EDITORIAL
+   Sandra Seibt · Premium Photography
+══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=Bebas+Neue&display=swap');
+
+:root {
+  /* ── Delicate Green Palette ── */
+  --bg:        #F8F5EE;   /* warmes Creme-Weiß     */
+  --bg-2:      #EDE8DA;   /* Sand                  */
+  --surface:   #E2DAC8;   /* Hellbeige              */
+  --surface-2: #D4C9B4;   /* dunkles Beige          */
+  --border:    rgba(42,30,14,0.10);
+  --border-2:  rgba(42,30,14,0.18);
+
+  --gold:      #C4933A;   /* Amber-Gold · Hauptakzent  */
+  --gold-lt:   #DDB870;   /* Helles Gold               */
+  --gold-dark: #96701A;   /* Tiefes Bernstein          */
+  --gold-pale: rgba(196,147,58,0.10);
+  --gold-glow: rgba(196,147,58,0.20);
+
+  --ink:       #2E1E0E;   /* Espresso-Braun · dunkelster Ton */
+  --white:     #2E1E0E;
+  --white-2:   rgba(46,30,14,0.62);
+  --white-3:   rgba(46,30,14,0.38);
+  --white-4:   rgba(46,30,14,0.09);
+
+  --f-serif:  'Cormorant Garamond', Georgia, serif;
+  --f-sans:   'Inter', system-ui, sans-serif;
+  --f-display:'Bebas Neue', sans-serif;
+
+  --ease:     cubic-bezier(.16,1,.3,1);
+  --ease-in:  cubic-bezier(.4,0,1,1);
+  --trans:    .6s var(--ease);
+}
+
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  background:var(--bg);
+  color:var(--white);
+  font-family:var(--f-sans);
+  font-weight:300;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── NOISE OVERLAY ───────────────────────── */
+body::before {
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:.03;
+  pointer-events:none;
+  z-index:999;
+}
+
+/* ── CURSOR ──────────────────────────────── */
+.cursor {
+  position:fixed;width:8px;height:8px;
+  background:var(--gold);border-radius:50%;
+  pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);
+  transition:transform .1s, width .3s var(--ease), height .3s var(--ease), opacity .3s;
+  mix-blend-mode:normal;
+}
+.cursor-ring {
+  position:fixed;width:36px;height:36px;
+  border:1px solid rgba(196,147,58,.5);
+  border-radius:50%;pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:transform .25s var(--ease), width .4s var(--ease), height .4s var(--ease), border-color .3s, opacity .3s;
+}
+body:hover .cursor { opacity:1; }
+
+/* ── NAV ─────────────────────────────────── */
+nav {
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:2rem 3.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .5s, padding .5s;
+}
+nav.scrolled {
+  background:rgba(250,248,243,0.94);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  padding:1.2rem 3.5rem;
+  border-bottom:1px solid var(--border);
+}
+.nav-logo {
+  font-family:var(--f-serif);
+  font-size:1.15rem;
+  font-weight:300;
+  letter-spacing:.15em;
+  color:var(--white);
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.nav-logo span { color:var(--gold); }
+.nav-links {
+  display:flex;gap:2.5rem;list-style:none;
+}
+.nav-links a {
+  font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--white-2);text-decoration:none;
+  transition:color .3s;
+}
+.nav-links a:hover { color:var(--gold); }
+.nav-cta {
+  font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  border:1px solid var(--gold);color:var(--gold);
+  padding:.6rem 1.4rem;text-decoration:none;
+  transition:background .3s, color .3s;
+}
+.nav-cta:hover { background:var(--gold);color:var(--bg); }
+
+/* ── HERO ────────────────────────────────── */
+.hero {
+  height:100vh;min-height:700px;
+  display:grid;place-items:center;
+  position:relative;overflow:hidden;
+}
+.hero-bg {
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 70% 50%, rgba(196,147,58,.10) 0%, transparent 60%),
+             radial-gradient(ellipse 50% 80% at 20% 80%, rgba(196,147,58,.06) 0%, transparent 50%);
+}
+.hero-line-v {
+  position:absolute;top:0;bottom:0;left:50%;
+  width:1px;background:var(--border);
+  transform:scaleY(0);transform-origin:top;
+  animation:lineGrow 1.4s var(--ease) .3s forwards;
+}
+.hero-line-h {
+  position:absolute;left:0;right:0;top:50%;
+  height:1px;background:var(--border);
+  transform:scaleX(0);transform-origin:left;
+  animation:lineGrow 1.4s var(--ease) .6s forwards;
+}
+@keyframes lineGrow { to { transform:scale(1); } }
+
+.hero-content {
+  position:relative;z-index:5;
+  text-align:center;padding:0 2rem;
+  max-width:1100px;
+}
+.hero-eyebrow {
+  font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2.5rem;
+  opacity:0;animation:fadeUp .8s var(--ease) .8s forwards;
+}
+.hero-title {
+  font-family:var(--f-serif);
+  font-size:clamp(4rem, 10vw, 9rem);
+  font-weight:300;line-height:1;
+  letter-spacing:-.02em;
+  margin-bottom:2.5rem;
+}
+.hero-title .line {
+  display:block;overflow:hidden;
+}
+.hero-title .line-inner {
+  display:block;
+  opacity:0;transform:translateY(100%);
+  animation:slideUp .9s var(--ease) forwards;
+}
+.hero-title .line:nth-child(1) .line-inner { animation-delay:.9s; }
+.hero-title .line:nth-child(2) .line-inner { animation-delay:1.05s; }
+.hero-title .line:nth-child(3) .line-inner { animation-delay:1.2s; }
+.hero-title em { font-style:italic;color:var(--gold); }
+@keyframes slideUp { to { opacity:1;transform:translateY(0); } }
+@keyframes fadeUp  { to { opacity:1;transform:translateY(0); } }
+
+.hero-sub {
+  font-size:1rem;color:var(--white-2);
+  max-width:540px;margin:0 auto 3rem;
+  opacity:0;animation:fadeUp .8s var(--ease) 1.4s forwards;
+}
+.hero-actions {
+  display:flex;gap:1.5rem;justify-content:center;align-items:center;
+  opacity:0;animation:fadeUp .8s var(--ease) 1.6s forwards;
+}
+.btn-ghost {
+  font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid var(--border-2);color:var(--white);
+  padding:.9rem 2.2rem;text-decoration:none;
+  transition:border-color .3s, color .3s;
+}
+.btn-ghost:hover { border-color:var(--gold);color:var(--gold); }
+.btn-fill {
+  font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  background:var(--gold);color:var(--bg);
+  padding:.9rem 2.2rem;text-decoration:none;
+  transition:background .3s, transform .3s;
+}
+.btn-fill:hover { background:var(--gold-lt);transform:translateY(-2px); }
+
+.hero-scroll {
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.6rem;
+  opacity:0;animation:fadeUp .8s var(--ease) 2s forwards;
+}
+.hero-scroll span {
+  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--white-3);
+}
+.scroll-bar {
+  width:1px;height:48px;background:var(--border-2);
+  position:relative;overflow:hidden;
+}
+.scroll-bar::after {
+  content:'';position:absolute;inset:0;
+  background:var(--gold);transform:translateY(-100%);
+  animation:scrollBar 1.8s var(--ease) 2.2s infinite;
+}
+@keyframes scrollBar {
+  0%   { transform:translateY(-100%); }
+  50%  { transform:translateY(0); }
+  100% { transform:translateY(100%); }
+}
+
+/* ── TICKER ──────────────────────────────── */
+.ticker {
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:1.1rem 0;overflow:hidden;
+  background:var(--surface);
+}
+.ticker-track {
+  display:flex;width:max-content;
+  animation:ticker 28s linear infinite;
+}
+.ticker-inner {
+  display:flex;align-items:center;gap:3rem;
+  padding-right:3rem;white-space:nowrap;
+}
+.ticker-inner span {
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--white-3);
+}
+.ticker-inner em {
+  color:var(--gold);font-style:normal;font-size:.7rem;
+}
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ── SECTION BASE ────────────────────────── */
+.section { padding:8rem 0; }
+.container { max-width:1240px;margin:0 auto;padding:0 3.5rem; }
+.label-sm {
+  font-size:.68rem;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1.8rem;display:block;
+}
+.section-num {
+  font-family:var(--f-display);
+  font-size:clamp(5rem,10vw,9rem);
+  color:var(--white-4);line-height:1;
+  display:block;margin-bottom:-2rem;
+}
+
+/* ── METHODE ─────────────────────────────── */
+.methode { background:var(--bg-2); }
+.methode-top {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:end;margin-bottom:6rem;
+}
+.methode-h {
+  font-family:var(--f-serif);
+  font-size:clamp(2.8rem,5vw,4.5rem);
+  font-weight:300;line-height:1.1;
+}
+.methode-h em { font-style:italic;color:var(--gold); }
+.methode-intro {
+  color:var(--white-2);font-size:1.05rem;line-height:1.8;
+  padding-top:1rem;
+}
+
+.steps {
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:1rem;border-top:none;
+}
+.step-item {
+  padding:2.5rem 1.8rem;
+  border-right:none;
+  border:1px solid var(--border);
+  border-radius:2rem;
+  position:relative;
+  transition:background .4s;
+}
+.step-item:last-child { border-right:none; }
+.step-item:hover { background:var(--surface); }
+.step-n {
+  font-family:var(--f-display);font-size:3rem;
+  color:var(--gold);opacity:.4;line-height:1;
+  margin-bottom:1.5rem;
+  transition:opacity .3s;
+}
+.step-item:hover .step-n { opacity:1; }
+.step-h {
+  font-family:var(--f-serif);font-size:1.2rem;
+  font-weight:400;margin-bottom:.8rem;
+  color:var(--white);
+}
+.step-p { font-size:.88rem;color:var(--white-2);line-height:1.7; }
+
+/* ── FÜR WEN ─────────────────────────────── */
+.fuer-wen { background:var(--bg); }
+.fw-top {
+  text-align:center;margin-bottom:5rem;
+}
+.fw-h {
+  font-family:var(--f-serif);
+  font-size:clamp(2.8rem,5vw,4.5rem);
+  font-weight:300;line-height:1.1;
+}
+.fw-h em { font-style:italic;color:var(--gold); }
+.fw-sub {
+  color:var(--white-2);max-width:540px;margin:1.5rem auto 0;
+  font-size:1rem;
+}
+
+.fw-cards {
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;
+  background:transparent;
+  border:none;
+}
+.fw-card {
+  background:var(--bg);padding:3rem 2rem;
+  transition:background .4s;
+  position:relative;overflow:hidden;
+  border-radius:2rem;
+  border:1px solid var(--border);
+}
+.fw-card::before {
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:2px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .5s var(--ease);
+}
+.fw-card:hover { background:var(--surface); }
+.fw-card:hover::before { transform:scaleX(1); }
+.fw-num {
+  font-family:var(--f-display);font-size:4rem;
+  color:var(--white-4);line-height:1;margin-bottom:1.5rem;
+}
+.fw-card h4 {
+  font-family:var(--f-serif);font-size:1.3rem;
+  font-weight:400;margin-bottom:1rem;
+  color:var(--white);
+}
+.fw-card p { font-size:.9rem;color:var(--white-2);line-height:1.7; }
+
+/* ── STATEMENT ───────────────────────────── */
+.statement {
+  background:var(--surface);
+  padding:7rem 0;text-align:center;
+  position:relative;overflow:hidden;
+}
+.statement::before {
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 100% at 50% 50%, rgba(196,147,58,.09) 0%, transparent 70%);
+}
+.statement-q {
+  font-family:var(--f-serif);
+  font-size:clamp(1.6rem,3.5vw,3rem);
+  font-weight:300;line-height:1.4;
+  max-width:900px;margin:0 auto;
+  position:relative;z-index:1;
+}
+.statement-q em { font-style:italic;color:var(--gold); }
+.statement-author {
+  margin-top:2.5rem;font-size:.78rem;
+  letter-spacing:.15em;text-transform:uppercase;
+  color:var(--white-3);
+}
+
+/* ── PORTFOLIO ───────────────────────────── */
+.portfolio { background:var(--bg-2); }
+.pf-top {
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:3.5rem;
+}
+.pf-h {
+  font-family:var(--f-serif);
+  font-size:clamp(2.8rem,5vw,4.2rem);
+  font-weight:300;line-height:1.1;
+}
+.pf-h em { font-style:italic;color:var(--gold); }
+
+.pf-grid {
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 340px 280px;
+  gap:1rem;
+}
+.pf-item {
+  position:relative;overflow:hidden;
+  background:var(--surface);
+  border-radius:1.8rem;
+}
+.pf-item img {
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.85) saturate(.9);
+  transition:transform .8s var(--ease), filter .5s;
+}
+.pf-item:hover img { transform:scale(1.06);filter:brightness(.7) saturate(1); }
+.pf-item-info {
+  position:absolute;bottom:0;left:0;right:0;
+  padding:1.5rem;
+  background:linear-gradient(to top, rgba(30,18,8,.85) 0%, transparent 100%);
+  transform:translateY(10px);opacity:0;
+  transition:opacity .4s, transform .4s var(--ease);
+}
+.pf-item:hover .pf-item-info { opacity:1;transform:translateY(0); }
+.pf-item-info small {
+  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:.3rem;
+}
+.pf-item-info h4 { font-family:var(--f-serif);font-weight:400;font-size:1.1rem; }
+.pf-item:first-child { grid-row:span 2; }
+
+/* ── TESTIMONIALS ────────────────────────── */
+.testi { background:var(--bg); }
+.testi-h {
+  font-family:var(--f-serif);
+  font-size:clamp(2.4rem,4vw,3.5rem);
+  font-weight:300;margin-bottom:4rem;
+  text-align:center;
+}
+.testi-h em { font-style:italic;color:var(--gold); }
+.testi-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1rem;background:transparent;border:none;
+}
+.testi-card {
+  background:var(--bg);padding:3rem;
+  position:relative;transition:background .4s;
+  border-radius:2rem;
+  border:1px solid var(--border);
+}
+.testi-card:hover { background:var(--surface); }
+.testi-card::before {
+  content:'"';
+  font-family:var(--f-serif);font-size:6rem;
+  color:var(--gold);opacity:.15;
+  position:absolute;top:1.5rem;right:2rem;
+  line-height:1;
+}
+.testi-stars { color:var(--gold);font-size:.85rem;margin-bottom:1.5rem; }
+.testi-card p { font-family:var(--f-serif);font-size:1.05rem;line-height:1.8;color:var(--white-2);margin-bottom:2rem;font-style:italic; }
+.testi-who { display:flex;align-items:center;gap:1rem; }
+.testi-av {
+  width:40px;height:40px;border-radius:50%;
+  background:var(--gold-pale);border:1px solid var(--gold);
+  display:grid;place-items:center;
+  font-size:.75rem;color:var(--gold);font-weight:500;
+  flex-shrink:0;
+}
+.testi-who strong { display:block;font-size:.9rem;font-weight:400;color:var(--white); }
+.testi-who span { font-size:.78rem;color:var(--white-3); }
+
+/* ── ÜBER MICH ───────────────────────────── */
+.ueber { background:var(--surface); }
+.ueber-grid {
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:6rem;align-items:center;
+}
+.ueber-img {
+  position:relative;
+  aspect-ratio:3/4;max-height:600px;
+  overflow:hidden;
+  border-radius:2.2rem;
+}
+.ueber-img img { width:100%;height:100%;object-fit:cover;object-position:center top; }
+.ueber-img::after {
+  content:'';position:absolute;inset:0;
+  border:1px solid var(--border-2);pointer-events:none;
+}
+.ueber-img-frame {
+  position:absolute;bottom:-1.5rem;right:-1.5rem;
+  width:60%;height:60%;
+  border:1px solid var(--gold);opacity:.3;pointer-events:none;
+}
+.ueber-text { padding:2rem 0; }
+.ueber-h {
+  font-family:var(--f-serif);
+  font-size:clamp(2.4rem,4vw,3.5rem);
+  font-weight:300;line-height:1.15;
+  margin-bottom:2rem;
+}
+.ueber-h em { font-style:italic;color:var(--gold); }
+.ueber-p { color:var(--white-2);line-height:1.85;margin-bottom:1.4rem; }
+.ueber-tags { display:flex;flex-wrap:wrap;gap:.6rem;margin:2rem 0; }
+.ueber-tag {
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  border:1px solid var(--border-2);color:var(--white-3);
+  padding:.4rem 1rem;
+}
+
+/* ── CTA ─────────────────────────────────── */
+.cta-section {
+  padding:10rem 0;text-align:center;
+  background:var(--bg-2);position:relative;overflow:hidden;
+}
+.cta-section::before {
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 50% 50%, rgba(196,147,58,.10) 0%, transparent 65%);
+}
+.cta-big {
+  font-family:var(--f-serif);
+  font-size:clamp(3rem,7vw,7rem);
+  font-weight:300;line-height:1.05;
+  max-width:900px;margin:0 auto 3rem;
+  position:relative;z-index:1;
+}
+.cta-big em { font-style:italic;color:var(--gold); }
+.cta-sub {
+  color:var(--white-2);max-width:480px;margin:0 auto 3rem;
+  position:relative;z-index:1;
+}
+.cta-actions { position:relative;z-index:1;display:flex;justify-content:center;gap:1.5rem; }
+
+/* ── FOOTER ──────────────────────────────── */
+footer {
+  background:var(--bg);
+  border-top:1px solid var(--border);
+  padding:3rem 0;
+}
+.footer-inner {
+  display:flex;align-items:center;justify-content:space-between;
+}
+.footer-logo { font-family:var(--f-serif);font-size:1rem;letter-spacing:.12em;color:var(--white-2); }
+.footer-logo span { color:var(--gold); }
+.footer-links { display:flex;gap:2rem; }
+.footer-links a { font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-3);text-decoration:none;transition:color .3s; }
+.footer-links a:hover { color:var(--gold); }
+.footer-copy { font-size:.72rem;color:var(--white-3); }
+
+/* ── REVEAL ANIMATIONS ───────────────────── */
+.r { opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease), transform .9s var(--ease); }
+.r.visible { opacity:1;transform:translateY(0); }
+.r-left { opacity:0;transform:translateX(-40px);transition:opacity .9s var(--ease), transform .9s var(--ease); }
+.r-left.visible { opacity:1;transform:translateX(0); }
+.r-right { opacity:0;transform:translateX(40px);transition:opacity .9s var(--ease), transform .9s var(--ease); }
+.r-right.visible { opacity:1;transform:translateX(0); }
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media(max-width:1024px) {
+  .steps { grid-template-columns:repeat(3,1fr); }
+  .pf-grid { grid-template-columns:1fr 1fr;grid-template-rows:auto; }
+  .pf-item:first-child { grid-row:auto; }
+  .ueber-grid { grid-template-columns:1fr;gap:3rem; }
+  .ueber-img { max-height:400px; }
+}
+@media(max-width:768px) {
+  nav { padding:1.5rem 1.5rem; }
+  nav.scrolled { padding:1rem 1.5rem; }
+  .nav-links { display:none; }
+  .container { padding:0 1.5rem; }
+  .section { padding:5rem 0; }
+  .methode-top { grid-template-columns:1fr; }
+  .steps { grid-template-columns:1fr 1fr; }
+  .fw-cards { grid-template-columns:1fr 1fr; }
+  .testi-grid { grid-template-columns:1fr; }
+  .pf-grid { grid-template-columns:1fr; }
+  .footer-inner { flex-direction:column;gap:1.5rem;text-align:center; }
+}<\/style>
+  <style>
+    /* ── QUIZ PAGE ─────────────────────────────────────────── */
+    .quiz-hero {
+      padding: 10rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .quiz-hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 60%, var(--gold-pale) 0%, transparent 65%);
+    }
+    .quiz-eyebrow {
+      font-size: .72rem; letter-spacing: .25em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem; display: block;
+    }
+    .quiz-hero-h {
+      font-family: var(--f-serif); font-size: clamp(2.4rem, 5vw, 4.5rem);
+      font-weight: 300; line-height: 1.1;
+    }
+    .quiz-hero-h em { font-style: italic; color: var(--gold); }
+    .quiz-hero-sub {
+      color: var(--white-2); max-width: 500px; margin: 1.5rem auto 0;
+      font-size: 1rem; line-height: 1.8;
+    }
+
+    /* ── QUIZ WRAPPER ──────────────────────────────────────── */
+    .quiz-section { padding: 3rem 0 8rem; background: var(--bg-2); }
+    .quiz-card {
+      max-width: 720px; margin: 0 auto;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 1.8rem; padding: 3.5rem;
+      box-shadow: 0 24px 80px rgba(0,0,0,.06);
+    }
+
+    /* Progress */
+    .quiz-progress {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .quiz-progress-bar {
+      flex: 1; height: 3px; background: var(--border-2);
+      border-radius: 2px; overflow: hidden;
+    }
+    .quiz-progress-fill {
+      height: 100%; background: var(--gold);
+      border-radius: 2px;
+      transition: width .5s cubic-bezier(.16,1,.3,1);
+    }
+    .quiz-progress-text {
+      font-size: .72rem; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--white-3);
+      white-space: nowrap;
+    }
+
+    /* Question */
+    .quiz-q-wrap { animation: fadeUp .4s cubic-bezier(.16,1,.3,1); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .quiz-q {
+      font-family: var(--f-serif); font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 300; line-height: 1.3; margin-bottom: 2rem;
+      color: var(--white);
+    }
+    .quiz-answers {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+    }
+    .quiz-answer {
+      background: var(--bg-2); border: 1px solid var(--border-2);
+      border-radius: 1rem; padding: 1.2rem 1.4rem;
+      cursor: pointer; text-align: left;
+      transition: all .25s cubic-bezier(.16,1,.3,1);
+      color: var(--white-2); font-size: .92rem; line-height: 1.5;
+    }
+    .quiz-answer:hover {
+      border-color: var(--gold); color: var(--white);
+      background: var(--gold-pale); transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--gold-glow);
+    }
+    .quiz-answer .a-icon {
+      display: block; font-size: 1.4rem; margin-bottom: .5rem;
+    }
+    .quiz-answer .a-label {
+      font-family: var(--f-serif); font-size: 1rem;
+      font-weight: 400; color: var(--white); display: block;
+      margin-bottom: .25rem;
+    }
+    .quiz-answer .a-sub {
+      font-size: .78rem; color: var(--white-3); line-height: 1.4;
+    }
+
+    /* Result */
+    .quiz-result { animation: fadeUp .5s cubic-bezier(.16,1,.3,1); }
+    .result-type {
+      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1rem; display: block;
+    }
+    .result-h {
+      font-family: var(--f-serif); font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300; line-height: 1.15; margin-bottom: 1.2rem;
+    }
+    .result-h em { font-style: italic; color: var(--gold); }
+    .result-desc {
+      color: var(--white-2); font-size: 1rem; line-height: 1.85;
+      margin-bottom: 1.5rem; max-width: 560px;
+    }
+    .result-tip {
+      background: var(--gold-pale); border: 1px solid var(--border-2);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 .8rem .8rem 0;
+      padding: 1.2rem 1.5rem; margin-bottom: 2.5rem;
+      color: var(--white-2); font-size: .92rem; line-height: 1.7;
+    }
+    .result-tip strong { color: var(--white); font-weight: 400; }
+    .result-cta-h {
+      font-family: var(--f-serif); font-size: 1.3rem; font-weight: 300;
+      margin-bottom: .6rem; color: var(--white);
+    }
+    .result-cta-h em { font-style: italic; color: var(--gold); }
+    .result-cta-p { color: var(--white-3); font-size: .88rem; margin-bottom: 1.5rem; }
+    .result-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .quiz-restart {
+      background: none; border: 1px solid var(--border-2);
+      color: var(--white-2); font-family: var(--f-sans); font-size: .78rem;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .8rem 1.6rem; border-radius: 2rem; cursor: pointer;
+      transition: all .3s;
+    }
+    .quiz-restart:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* Types visual */
+    .result-visual {
+      display: flex; gap: .5rem; margin-bottom: 2rem;
+    }
+    .rv-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--border-2); transition: background .3s;
+    }
+    .rv-dot.active { background: var(--gold); transform: scale(1.4); }
+
+    @media(max-width: 600px) {
+      .quiz-card { padding: 2rem 1.5rem; border-radius: 1.2rem; }
+      .quiz-answers { grid-template-columns: 1fr; }
+      .result-btns { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Business <span>Bildsprache</span></a>
+    <ul class="nav-links">
+      <li><a href="methode.html">Methode</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Gespräch anfragen</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="quiz-hero">
+    <div class="quiz-hero-bg"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="quiz-eyebrow r">Kostenloser Selbsttest</span>
+      <h1 class="quiz-hero-h r">
+        Welcher<br/><em>Sichtbarkeits-Typ</em><br/>bist du?
+      </h1>
+      <p class="quiz-hero-sub r">
+        7 Fragen. 2 Minuten. Und du weißt, wie du wirkst —
+        und wie du dich wirklich authentisch zeigen kannst.
+      </p>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="quiz-section">
+    <div class="container">
+      <div class="quiz-card" id="quizCard">
+
+        <!-- Progress -->
+        <div class="quiz-progress" id="progressBar">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="progressFill" style="width:0%"></div>
+          </div>
+          <span class="quiz-progress-text" id="progressText">Frage 1 von 7</span>
+        </div>
+
+        <!-- Question area -->
+        <div id="quizArea"></div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Business <span>Bildsprache</span> · Sandra Seibt</span>
+        <div class="footer-links">
+          <a href="#">Impressum</a><a href="#">Datenschutz</a>
+          <a href="https://www.instagram.com/sandra.seibt" target="_blank">Instagram</a>
+        </div>
+        <span class="footer-copy">© 2026 Sandra Seibt</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  /* ── CURSOR ─────────────────────────────────────────────── */
+  const cur = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+  });
+  (function loop() {
+    rx += (mx - rx) * .12; ry += (my - ry) * .12;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+    requestAnimationFrame(loop);
+  })();
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => { ring.style.width = '56px'; ring.style.height = '56px'; });
+    el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; });
+  });
+
+  /* ── NAV ────────────────────────────────────────────────── */
+  const nav = document.getElementById('nav');
+  nav.classList.add('scrolled');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  /* ── REVEAL ─────────────────────────────────────────────── */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: .1 });
+  document.querySelectorAll('.r, .r-left, .r-right').forEach(el => obs.observe(el));
+
+  /* ── QUIZ ───────────────────────────────────────────────── */
+  const questions = [
+    {
+      q: "Wie fühlst du dich, wenn du an ein Foto-Shooting denkst?",
+      answers: [
+        { icon: "🌿", label: "Ruhig & beobachtend", sub: "Ich brauche Zeit, um anzukommen" },
+        { icon: "✨", label: "Aufgeregt & lebendig", sub: "Ich freue mich auf den Moment" },
+        { icon: "📋", label: "Strukturiert & vorbereitet", sub: "Ich will wissen, was auf mich zukommt" },
+        { icon: "🤍", label: "Offen, aber nervös", sub: "Ich mache es, obwohl ich unsicher bin" }
+      ]
+    },
+    {
+      q: "Welche Bilder sprechen dich instinktiv an?",
+      answers: [
+        { icon: "🤍", label: "Ruhig & reduziert", sub: "Viel Stille, wenig Ablenkung" },
+        { icon: "🌊", label: "Dynamisch & lebendig", sub: "Bewegung, Energie, echte Momente" },
+        { icon: "◻️", label: "Klar & strukturiert", sub: "Klare Linien, starke Komposition" },
+        { icon: "🌸", label: "Warm & nahbar", sub: "Sanftes Licht, echte Verbindung" }
+      ]
+    },
+    {
+      q: "Was fällt dir in der Außenwirkung schwer?",
+      answers: [
+        { icon: "🔇", label: "Mich überhaupt zu zeigen", sub: "Ich bin lieber im Hintergrund" },
+        { icon: "⏸️", label: "Ruhig und langsam zu wirken", sub: "Ich sprühe vor Energie" },
+        { icon: "😊", label: "Locker und leicht zu wirken", sub: "Ich wirke schnell zu ernst" },
+        { icon: "💬", label: "Mich wirklich zu öffnen", sub: "Nähe fühlt sich verletzlich an" }
+      ]
+    },
+    {
+      q: "Wie beschreiben dich Menschen, die dich gut kennen?",
+      answers: [
+        { icon: "🌙", label: "Ruhig & tiefgründig", sub: "Du denkst viel und redest wenig" },
+        { icon: "⚡", label: "Energiegeladen & mitreißend", sub: "Du bringst Leben in den Raum" },
+        { icon: "🎯", label: "Klar & kompetent", sub: "Man verlässt sich auf dich" },
+        { icon: "🤗", label: "Warm & verbindend", sub: "Bei dir fühlt man sich sofort wohl" }
+      ]
+    },
+    {
+      q: "Welcher Satz trifft auf dich zu?",
+      answers: [
+        { icon: "🌱", label: "„Ich brauche Zeit zum Ankommen."", sub: "Tiefe statt Schnelligkeit" },
+        { icon: "🔥", label: "„Ich bin schnell im Tun."", sub: "Energie und Spontanität" },
+        { icon: "📌", label: "„Ich will Klarheit und Struktur."", sub: "Vorbereitung gibt mir Sicherheit" },
+        { icon: "💞", label: "„Ich fühle viel und tief."", sub: "Emotionen sind mein Kompass" }
+      ]
+    },
+    {
+      q: "Welche Art von Bildsprache passt zu deinem Business?",
+      answers: [
+        { icon: "🤫", label: "Zurückhaltend & stilvoll", sub: "Weniger ist mehr" },
+        { icon: "🎬", label: "Lebendig & in Bewegung", sub: "Echte Momente, echter Mensch" },
+        { icon: "✦", label: "Sauber & professionell", sub: "Klarheit schafft Vertrauen" },
+        { icon: "🌻", label: "Herzlich & verbindend", sub: "Menschen sollen dich mögen" }
+      ]
+    },
+    {
+      q: "Was sollen Menschen fühlen, wenn sie deine Bilder sehen?",
+      answers: [
+        { icon: "🧘", label: "„Da steckt Tiefe dahinter."", sub: "Respekt und Neugier" },
+        { icon: "💫", label: "„Die will ich kennenlernen!"", sub: "Begeisterung und Energie" },
+        { icon: "🏆", label: "„Der/die weiß, was er/sie tut."", sub: "Vertrauen und Kompetenz" },
+        { icon: "💛", label: "„Da fühle ich mich gut aufgehoben."", sub: "Wärme und Sicherheit" }
+      ]
+    }
+  ];
+
+  const results = [
+    {
+      type: "Der ruhige Typ",
+      emoji: "🌿",
+      h: "Deine Stärke liegt in <em>Präsenz.</em>",
+      desc: "Du wirkst tief, durchdacht und echt. Menschen nehmen dich wahr, auch wenn du wenig sagst. Deine Bilder brauchen keine Lautstärke — sie brauchen Stille, Substanz und diesen besonderen Augenblick, in dem man spürt: Da steckt mehr dahinter.",
+      pain: "Was dich wahrscheinlich bremst: Du zeigst dich nur, wenn es sich wirklich richtig anfühlt. Das bedeutet: vielleicht zeigst du dich zu selten.",
+      tip: "Zeige weniger — aber echter. Ein Bild, das wirklich du bist, ist stärker als zehn gestylt-perfekte. Lass mich die Stille in dir sichtbar machen.",
+      color: "#6E8A65"
+    },
+    {
+      type: "Der energetische Typ",
+      emoji: "✨",
+      h: "Du füllst jeden Raum — <em>lass das deine Bilder auch.</em>",
+      desc: "Menschen spüren deine Energie sofort. Du bist präsent, lebendig, mitreißend. Deine Bilder sollten genau das zeigen — nicht die gestellt-perfekte Version von dir, sondern den Moment, in dem deine Augen leuchten und du einfach du bist.",
+      pain: "Was dich wahrscheinlich bremst: Wenn du dir zu lange Zeit lässt, verlierst du die Leichtigkeit. Spontanität ist deine Superpower.",
+      tip: "Nutze Bewegung und echte Momente. Die besten Bilder von dir entstehen, wenn du gar nicht drüber nachdenkst — lass mich genau diesen Moment einfangen.",
+      color: "#C4933A"
+    },
+    {
+      type: "Der strukturierte Typ",
+      emoji: "◻️",
+      h: "Klarheit ist deine <em>stärkste Aussage.</em>",
+      desc: "Du wirkst kompetent, verlässlich, klar. Menschen vertrauen dir — weil du weißt, was du tust, und das auch zeigst. Deine Bilder sollten diese Klarheit ausstrahlen, ohne kalt zu wirken.",
+      pain: "Was dich wahrscheinlich bremst: Du möchtest kontrollieren, wie du wirkst. Das ist gut — aber manchmal braucht es den Mut, auch das Unfertige zu zeigen.",
+      tip: "Bring mehr Leben in deine Klarheit. Ein Lächeln, ein echter Moment, eine kleine Verletzlichkeit — das macht aus Kompetenz echte Verbindung.",
+      color: "#4A7BA7"
+    },
+    {
+      type: "Der verbindende Typ",
+      emoji: "🤍",
+      h: "Menschen kommen zu dir, <em>weil sie sich sicher fühlen.</em>",
+      desc: "Du bist warm, empathisch und nahbar. Menschen öffnen sich dir — weil sie spüren, dass du wirklich zuhörst. Deine Bilder sollten genau diese Qualität zeigen: nicht perfekt, aber echt. Nicht glatt, aber herzlich.",
+      pain: "Was dich wahrscheinlich bremst: Du bist es gewohnt, für andere da zu sein. Dich selbst in den Vordergrund zu stellen fühlt sich ungewohnt an.",
+      tip: "Zeige echte Emotion statt Perfektion. Deine Wärme ist dein stärkstes Verkaufsargument — und genau das fange ich in deinen Bildern ein.",
+      color: "#B5603A"
+    }
+  ];
+
+  let current = 0;
+  let scores = [0, 0, 0, 0];
+
+  function updateProgress() {
+    const pct = (current / questions.length) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressText').textContent = `Frage ${current + 1} von ${questions.length}`;
+  }
+
+  function renderQuestion() {
+    updateProgress();
+    const q = questions[current];
+    const area = document.getElementById('quizArea');
+    area.innerHTML = `
+      <div class="quiz-q-wrap">
+        <p class="quiz-q">${q.q}</p>
+        <div class="quiz-answers">
+          ${q.answers.map((a, i) => `
+            <button class="quiz-answer" onclick="pickAnswer(${i})">
+              <span class="a-icon">${a.icon}</span>
+              <span class="a-label">${a.label}</span>
+              <span class="a-sub">${a.sub}</span>
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  function pickAnswer(i) {
+    scores[i]++;
+    current++;
+    if (current >= questions.length) {
+      showResult();
+    } else {
+      renderQuestion();
+    }
+  }
+
+  function showResult() {
+    const maxScore = Math.max(...scores);
+    const winnerIndex = scores.indexOf(maxScore);
+    const r = results[winnerIndex];
+
+    document.getElementById('progressBar').style.display = 'none';
+
+    const area = document.getElementById('quizArea');
+    area.innerHTML = `
+      <div class="quiz-result">
+        <div class="result-visual">
+          ${results.map((_, i) => `<div class="rv-dot ${i === winnerIndex ? 'active' : ''}"></div>`).join('')}
+        </div>
+        <span class="result-type">${r.emoji} Dein Typ</span>
+        <h2 class="result-h">${r.type} — ${r.h}</h2>
+        <p class="result-desc">${r.desc}</p>
+        <p class="result-desc" style="font-size:.9rem;opacity:.8;">${r.pain}</p>
+        <div class="result-tip">
+          <strong>Sandras Tipp für dich:</strong><br/>${r.tip}
+        </div>
+        <h3 class="result-cta-h">Lass uns darüber reden — <em>kostenlos.</em></h3>
+        <p class="result-cta-p">30 Minuten. Kein Druck. Ich höre dir zu und sage dir, wie deine Bilder wirklich wirken könnten.</p>
+        <div class="result-btns">
+          <a href="kontakt.html" class="btn-fill">Kostenloses Gespräch anfragen</a>
+          <button class="quiz-restart" onclick="restartQuiz()">Quiz wiederholen</button>
+        </div>
+      </div>
+    `;
+
+    // Update progress to 100%
+    document.getElementById('progressFill') && (document.getElementById('progressFill').style.width = '100%');
+  }
+
+  function restartQuiz() {
+    current = 0;
+    scores = [0, 0, 0, 0];
+    document.getElementById('progressBar').style.display = 'flex';
+    renderQuestion();
+  }
+
+  // Start
+  renderQuestion();
+  </script>
+</body>
+</html>

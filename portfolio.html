@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio · Business Fotografin Frankfurt & Rhein-Main · Sandra Seibt</title>
+  <meta name="description" content="Portfolio von Sandra Seibt — Business Portraits, Events, Stores & Teams. Authentische Business-Fotografie im Rhein-Main-Gebiet und deutschlandweit."/>
+  <meta name="keywords" content="Business Portfolio Fotografin Frankfurt, Business Portrait Portfolio, Eventfotografie Portfolio, Brand Fotografie Beispiele, Sandra Seibt Portfolio"/>
+  <meta property="og:title" content="Portfolio · Business Bildsprache · Sandra Seibt"/>
+  <meta property="og:description" content="Echte Menschen. Echte Geschichten. Business-Fotografie im Rhein-Main-Gebiet."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://www.business-bildsprache.de/portfolio.html"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .page-hero { padding:12rem 0 6rem;text-align:center;position:relative;overflow:hidden; }
+    .page-hero-bg { position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 60%, var(--gold-pale) 0%, transparent 65%); }
+    .page-hero-eyebrow { font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;display:block; }
+    .page-hero-h { font-family:var(--f-serif);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.05;position:relative; }
+    .page-hero-h em { font-style:italic;color:var(--gold); }
+
+    .pf-full { padding:4rem 0 8rem;background:var(--bg-2); }
+    .pf-filter-bar { display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:3rem; }
+    .pf-btn { font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--border-2);color:var(--white-2);padding:.5rem 1.2rem;background:none;cursor:pointer;transition:all .3s;border-radius:2rem; }
+    .pf-btn.on,.pf-btn:hover { border-color:var(--gold);color:var(--gold);background:var(--gold-pale); }
+
+    .pf-masonry { columns:3;gap:1rem; }
+    .pf-card { break-inside:avoid;margin-bottom:1rem;border-radius:1rem;overflow:hidden;position:relative;cursor:pointer; }
+    .pf-card img { width:100%;display:block;transition:transform .7s cubic-bezier(.16,1,.3,1),filter .5s; filter:brightness(.9) saturate(.95);}
+    .pf-card:hover img { transform:scale(1.04);filter:brightness(.75) saturate(1); }
+    .pf-card-info { position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(20,14,8,.85) 0%,transparent 100%);transform:translateY(6px);opacity:0;transition:opacity .4s,transform .4s cubic-bezier(.16,1,.3,1); }
+    .pf-card:hover .pf-card-info { opacity:1;transform:translateY(0); }
+    .pf-card-info small { font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.2rem; }
+    .pf-card-info h4 { font-family:var(--f-serif);font-weight:400;font-size:1rem;color:#F7F0E8; }
+    .pf-card[data-c] { transition:opacity .4s,transform .4s; }
+    .pf-card.hidden { opacity:0;pointer-events:none;position:absolute; }
+    .btn-row { display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap; }
+
+    @media(max-width:768px){ .pf-masonry { columns:2; } }
+    @media(max-width:480px){ .pf-masonry { columns:1; } }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Business <span>Bildsprache</span></a>
+    <ul class="nav-links">
+      <li><a href="methode.html">Methode</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="portfolio.html" style="color:var(--gold)">Portfolio</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="hotelfotografie.html">Hotelfotografie</a></li>
+      <li><a href="quiz.html" style="color:var(--gold)">Quiz ✦</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Gespräch anfragen</a>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="page-hero-eyebrow r">Portfolio</span>
+      <h1 class="page-hero-h r">
+        Echte Menschen.<br/><em>Echte Geschichten.</em>
+      </h1>
+    </div>
+  </section>
+
+  <section class="pf-full">
+    <div class="container">
+      <div class="pf-filter-bar r">
+        <button class="pf-btn on" data-f="all">Alle</button>
+        <button class="pf-btn" data-f="portrait">Portraits</button>
+        <button class="pf-btn" data-f="store">Stores</button>
+        <button class="pf-btn" data-f="event">Events</button>
+        <button class="pf-btn" data-f="team">Teams</button>
+      </div>
+
+      <div class="pf-masonry" id="pfMasonry">
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/sandraseibtfotografie-1.JPG" alt="Tagung" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Tagung</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/sandraseibtfotografie%20-37.JPG" alt="Portrait" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Urban Portrait</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/sandraseibtfotografie-3.JPG" alt="Vortrag" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Vortrag &amp; Publikum</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/sandraseibtfotografie%20-48.JPG" alt="Portrait Dachterrasse" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Dachterrassen-Portrait</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/sandraseibtfotografie-10%202.JPG" alt="Messe" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Messe-Austausch</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/sandraseibtfotografie%20-8.JPG" alt="Portrait Detail" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Perlen &amp; Eleganz</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/sandraseibtfotografie-11.JPG" alt="Networking" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Networking Pause</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/sandraseibtfotografie%20Studio-14.jpg" alt="Studio Portrait" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Studio Shooting</h4></div>
+        </div>
+        <div class="pf-card r" data-c="store">
+          <img src="bilder/Portfolio/sandraseibtfotografie-34.JPG" alt="Store" loading="lazy"/>
+          <div class="pf-card-info"><small>Store</small><h4>Ladenbesuch</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/sandraseibtfotografie-1-15.JPG" alt="Business Portrait" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Business Portrait</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/sandraseibtfotografie-38.JPG" alt="Gemeinschaft" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Gemeinschaft</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/sandraseibtfotografie1-07962.JPG" alt="Outdoor Portrait" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Outdoor Portrait</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/sandraseibtfotografie-40.JPG" alt="Präsentation" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Präsentation</h4></div>
+        </div>
+        <div class="pf-card r" data-c="store">
+          <img src="bilder/Portfolio/sandraseibtfotografie-143.JPG" alt="Food Detail" loading="lazy"/>
+          <div class="pf-card-info"><small>Store</small><h4>Food &amp; Details</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/A9_03697.JPG" alt="Yoga Gruppe" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Yoga Gruppe</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/sandraseibtfotografie-163.JPG" alt="Portrait Detail" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Authentischer Moment</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/IMG_6297.JPG" alt="Urban Portrait" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Urban &amp; Architektur</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/IMG_6761%202.jpg" alt="Coaching" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Coaching Gespräch</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/IMG_6757%202.jpg" alt="Portrait" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Straßen-Eleganz</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/28A39B49-016F-4F1F-94A9-6712292829A6.JPG" alt="Event" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Freundinnen-Kreis</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/133794B8-F5D0-4EAC-9C60-BD2074E49437.JPG" alt="Portrait" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Profil Portrait</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/39EF2DD5-9C92-4B5C-A705-615FE59412E1.JPG" alt="Beratung" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Beratung &amp; Dialog</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/02E89523-86BB-4188-8A2A-6D59225803A1.JPG" alt="Portrait" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Licht &amp; Raum</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/DA151D2D-30E5-46A2-A8A2-CEEBC3FF2849.JPG" alt="Portrait" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Nahes Portrait</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/sandraseibtfotografie-15%202.JPG" alt="Vortrag" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Vortrag &amp; Publikum</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/sandraseibtfotografie-15%203.JPG" alt="Workshop" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Workshop Session</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/sandraseibtfotografie-10-2%202.JPG" alt="Messe" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Messe Präsentation</h4></div>
+        </div>
+        <div class="pf-card r" data-c="event">
+          <img src="bilder/Portfolio/sandraseibtfotografie-38%202.JPG" alt="Tanz" loading="lazy"/>
+          <div class="pf-card-info"><small>Event</small><h4>Freude &amp; Energie</h4></div>
+        </div>
+        <div class="pf-card r" data-c="portrait">
+          <img src="bilder/Portfolio/sandraseibtfotografie-10%203.JPG" alt="Portrait" loading="lazy"/>
+          <div class="pf-card-info"><small>Portrait</small><h4>Heilpraktiker Portrait</h4></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:5rem 0;text-align:center;background:var(--surface);">
+    <div class="container">
+      <h3 class="r" style="font-family:var(--f-serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;margin-bottom:1rem;">Dein Business könnte hier sein.<br/><em style="font-style:italic;color:var(--gold);">Lass es uns gemeinsam erschaffen.</em></h3>
+      <p class="r" style="color:var(--white-2);max-width:480px;margin:0 auto 2.5rem;">Das erste Gespräch ist kostenlos und unverbindlich.</p>
+      <div class="btn-row r">
+        <a href="kontakt.html" class="btn-fill">Gespräch anfragen</a>
+        <a href="leistungen.html" class="btn-ghost">Leistungen ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Business <span>Bildsprache</span> · Sandra Seibt</span>
+        <div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="https://www.instagram.com/sandra.seibt" target="_blank">Instagram</a></div>
+        <span class="footer-copy">© 2026 Sandra Seibt</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+  const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+  (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ring.style.width='56px';ring.style.height='56px';});
+    el.addEventListener('mouseleave',()=>{ring.style.width='36px';ring.style.height='36px';});
+  });
+  document.getElementById('nav').classList.add('scrolled');
+  window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60));
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:.08});
+  document.querySelectorAll('.r,.r-left,.r-right').forEach(el=>obs.observe(el));
+  // Filter
+  document.querySelectorAll('.pf-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('on'));
+      btn.classList.add('on');
+      const f=btn.dataset.f;
+      document.querySelectorAll('.pf-card').forEach(c=>{
+        if(f==='all'||c.dataset.c===f){c.style.display='block';}
+        else{c.style.display='none';}
+      });
+    });
+  });
+  </script>
+</body>
+</html>

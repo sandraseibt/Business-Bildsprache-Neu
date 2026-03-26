@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sandra Seibt · Business Fotografin Frankfurt Rhein-Main · Über mich</title>
+  <meta name="description" content="Sandra Seibt — Business Fotografin aus Flörsheim am Main. HSP, Social Media Managerin, leidenschaftliche Geschichtenerzählerin durch Bilder. Deutschlandweit buchbar."/>
+  <meta name="keywords" content="Sandra Seibt Fotografin, Business Fotografin Frankfurt, Businessfotografin Flörsheim, Fotografin Rhein-Main, Social Media Fotografin Frankfurt"/>
+  <meta property="og:title" content="Sandra Seibt · Business Fotografin Frankfurt"/>
+  <meta property="og:description" content="Ich fotografiere nicht einfach — ich erzähle deine Geschichte in Bildern."/>
+  <meta property="og:type" content="profile"/>
+  <link rel="canonical" href="https://www.business-bildsprache.de/ueber-mich.html"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .page-hero { padding:12rem 0 4rem;text-align:center;position:relative;overflow:hidden; }
+    .page-hero-bg { position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 60%, var(--gold-pale) 0%, transparent 65%); }
+    .page-hero-eyebrow { font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;display:block; }
+    .page-hero-h { font-family:var(--f-serif);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.05; }
+    .page-hero-h em { font-style:italic;color:var(--gold); }
+
+    .u-story { padding:6rem 0;background:var(--bg-2); }
+    .u-story-grid { display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:start; }
+    .u-img-wrap { position:relative; }
+    .u-img { border-radius:1.4rem;overflow:hidden;aspect-ratio:3/4; }
+    .u-img img { width:100%;height:100%;object-fit:cover;object-position:center top; }
+    .u-img-deco { position:absolute;bottom:-1.2rem;right:-1.2rem;width:55%;height:55%;border:1px solid var(--gold);opacity:.25;border-radius:.6rem;pointer-events:none; }
+    .u-quote { margin-top:2rem;padding:1.5rem 2rem;border-left:2px solid var(--gold);background:var(--bg); border-radius:0 .8rem .8rem 0; }
+    .u-quote p { font-family:var(--f-serif);font-size:1.1rem;font-style:italic;color:var(--white-2);line-height:1.7; }
+
+    .u-text h2 { font-family:var(--f-serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.2;margin-bottom:2rem; }
+    .u-text h2 em { font-style:italic;color:var(--gold); }
+    .u-text p { color:var(--white-2);line-height:1.85;margin-bottom:1.4rem; }
+    .u-text strong { color:var(--white);font-weight:400; }
+
+    .u-values { padding:6rem 0;background:var(--bg); }
+    .u-values h2 { font-family:var(--f-serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;text-align:center;margin-bottom:3rem; }
+    .u-values h2 em { font-style:italic;color:var(--gold); }
+    .u-values-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1rem; }
+    .u-val { background:var(--bg-2);border-radius:1.2rem;padding:2.5rem;border:1px solid var(--border);transition:background .4s; }
+    .u-val:hover { background:var(--surface); }
+    .u-val-n { font-family:var(--f-display);font-size:3.5rem;color:var(--gold);opacity:.25;line-height:1;margin-bottom:1rem; }
+    .u-val h4 { font-family:var(--f-serif);font-size:1.2rem;font-weight:400;margin-bottom:.7rem; }
+    .u-val p { font-size:.9rem;color:var(--white-2);line-height:1.7; }
+
+    .u-facts { padding:5rem 0;background:var(--surface);text-align:center; }
+    .u-facts-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:3rem; }
+    .u-fact strong { font-family:var(--f-display);font-size:3.5rem;color:var(--gold);display:block;line-height:1; }
+    .u-fact span { font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white-3); }
+
+    .u-cta { padding:7rem 0;text-align:center;background:var(--bg-2); }
+    .u-cta h2 { font-family:var(--f-serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:300;margin-bottom:1.2rem; }
+    .u-cta h2 em { font-style:italic;color:var(--gold); }
+    .u-cta p { color:var(--white-2);max-width:480px;margin:0 auto 2.5rem; }
+    .btn-row { display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap; }
+
+    @media(max-width:900px){
+      .u-story-grid { grid-template-columns:1fr;gap:3rem; }
+      .u-values-grid { grid-template-columns:1fr 1fr; }
+      .u-facts-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media(max-width:600px){ .u-values-grid,.u-facts-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Business <span>Bildsprache</span></a>
+    <ul class="nav-links">
+      <li><a href="methode.html">Methode</a></li>
+      <li><a href="leistungen.html">Leistungen</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="ueber-mich.html" style="color:var(--gold)">Über mich</a></li>
+      <li><a href="hotelfotografie.html">Hotelfotografie</a></li>
+      <li><a href="quiz.html" style="color:var(--gold)">Quiz ✦</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Gespräch anfragen</a>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="page-hero-eyebrow r">Über mich</span>
+      <h1 class="page-hero-h r">
+        Ich bin Sandra —<br/><em>ich sehe, was andere übersehen.</em>
+      </h1>
+    </div>
+  </section>
+
+  <section class="u-story">
+    <div class="container">
+      <div class="u-story-grid">
+        <div class="u-img-wrap r-left">
+          <div class="u-img">
+            <img src="bilder/ichübermich.jpg" alt="Sandra Seibt – Business Fotografin Rhein-Main"/>
+          </div>
+          <div class="u-img-deco"></div>
+          <div class="u-quote r">
+            <p>„Ich fotografiere nicht einfach. Ich höre zu, spüre nach — und dann fange ich den Moment ein, in dem du wirklich du bist."</p>
+          </div>
+        </div>
+
+        <div class="u-text r-right">
+          <span class="label-sm">Meine Geschichte</span>
+          <h2>Hochsensibel. Empathisch.<br/><em>Fotografin aus Leidenschaft.</em></h2>
+          <p>Ich bin <strong>hochsensibel</strong> — und das ist mein größtes Geschenk als Fotografin. Ich spüre die Energie in einem Raum. Ich sehe das Leuchten in den Augen eines Menschen, wenn er von seiner Arbeit erzählt. Ich nehme wahr, was andere übersehen.</p>
+          <p>In über <strong>13 Jahren als Fotografin im Rhein-Main-Gebiet</strong> habe ich gelernt: Die besten Bilder entstehen nicht durch Technik, perfektes Licht oder die teuerste Ausrüstung. Sie entstehen, wenn jemand wirklich gesehen wird. Wenn jemand sich sicher genug fühlt, einfach er selbst zu sein.</p>
+          <p>Genau das schaffe ich. Ich stelle Fragen — die echten, nicht die oberflächlichen. Ich höre zu. Ich halte Raum. Und dann fotografiere ich das, was ich sehe: <strong>dich. Dein Business. Deine Seele.</strong></p>
+          <p>Als Manifesting Generator (Human Design 1/3) bringe ich eine natürliche Energie mit, die Menschen in Bewegung bringt. Ich lerne durch Erfahrung, ich gehe in die Tiefe — und ich begleite dich mit ganzer Aufmerksamkeit.</p>
+          <div class="ueber-tags" style="margin-top:2rem;">
+            <span class="ueber-tag">Rhein-Main</span>
+            <span class="ueber-tag">HSP · Hochsensibel</span>
+            <span class="ueber-tag">MG 1/3 Human Design</span>
+            <span class="ueber-tag">Werte-basiert</span>
+            <span class="ueber-tag">13+ Jahre Erfahrung</span>
+          </div>
+          <a href="https://www.instagram.com/sandra.seibt" target="_blank" class="btn-ghost" style="display:inline-block;margin-top:2rem;">Instagram folgen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="u-values">
+    <div class="container">
+      <h2 class="r">Was mich <em>antreibt</em></h2>
+      <div class="u-values-grid">
+        <div class="u-val r">
+          <div class="u-val-n">01</div>
+          <h4>Echte Sichtbarkeit</h4>
+          <p>Nicht schöngemacht, nicht übertrieben. Ich glaube, dass echte Bilder mehr bewirken als perfekte — weil Menschen Authentizität spüren.</p>
+        </div>
+        <div class="u-val r">
+          <div class="u-val-n">02</div>
+          <h4>Tiefes Zuhören</h4>
+          <p>Bevor ich fotografiere, verstehe ich. Was dich bewegt, was du zeigen willst, was du brauchst. Jedes Gespräch ist anders — und das ist gut so.</p>
+        </div>
+        <div class="u-val r">
+          <div class="u-val-n">03</div>
+          <h4>Mut zur Einzigartigkeit</h4>
+          <p>Dein Business ist nicht wie jedes andere. Deine Bilder auch nicht. Ich helfe dir, den Mut zu finden, wirklich du zu sein — nach außen.</p>
+        </div>
+        <div class="u-val r">
+          <div class="u-val-n">04</div>
+          <h4>Wärme &amp; Sicherheit</h4>
+          <p>Viele Menschen haben Angst vor der Kamera. Ich schaffe eine Atmosphäre, in der diese Angst verschwindet — und echte Momente entstehen können.</p>
+        </div>
+        <div class="u-val r">
+          <div class="u-val-n">05</div>
+          <h4>Vielfalt ohne Schubladen</h4>
+          <p>Dachdecker, Yogatrainerin, Restaurant, Coach — jedes Business verdient echte Bilder. Ich mache keine Unterschiede. Ich mache Bilder.</p>
+        </div>
+        <div class="u-val r">
+          <div class="u-val-n">06</div>
+          <h4>Langfristige Wirkung</h4>
+          <p>Ich denke nicht in Shootings — ich denke in Bildwelten. Was entsteht, soll lange halten, vielseitig einsetzbar sein und wirklich wirken.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="u-facts">
+    <div class="container">
+      <span class="label-sm r">In Zahlen</span>
+      <div class="u-facts-grid">
+        <div class="u-fact r"><strong>13+</strong><span>Jahre Erfahrung</span></div>
+        <div class="u-fact r"><strong>150+</strong><span>Projekte</span></div>
+        <div class="u-fact r"><strong>∞</strong><span>Branchen</span></div>
+        <div class="u-fact r"><strong>1</strong><span>Methode · Die echte</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="u-cta">
+    <div class="container">
+      <h2 class="r">Lass uns kennenlernen.<br/><em>Ganz ohne Druck.</em></h2>
+      <p class="r">30 Minuten. Kostenlos. Einfach reden — über dich, dein Business, deine Wünsche. Ich höre zu.</p>
+      <div class="btn-row r">
+        <a href="kontakt.html" class="btn-fill">Gespräch anfragen</a>
+        <a href="portfolio.html" class="btn-ghost">Portfolio ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Business <span>Bildsprache</span> · Sandra Seibt</span>
+        <div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="https://www.instagram.com/sandra.seibt" target="_blank">Instagram</a></div>
+        <span class="footer-copy">© 2026 Sandra Seibt</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+  const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+  (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ring.style.width='56px';ring.style.height='56px';});
+    el.addEventListener('mouseleave',()=>{ring.style.width='36px';ring.style.height='36px';});
+  });
+  document.getElementById('nav').classList.add('scrolled');
+  window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60));
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:.1});
+  document.querySelectorAll('.r,.r-left,.r-right').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>

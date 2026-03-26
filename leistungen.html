@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leistungen · Business Fotografin Frankfurt · Sandra Seibt</title>
+  <meta name="description" content="Business Portrait, Brand Shooting, Hotelfotografie, Social Media & mehr. Sandra Seibt — Business Fotografin im Rhein-Main-Gebiet, deutschlandweit buchbar."/>
+  <meta name="keywords" content="Business Portrait Frankfurt, Brand Shooting Rhein-Main, Hotelfotografie Frankfurt, Social Media Fotografin, Eventfotografie Frankfurt, Businessfotografin buchen, Sandra Seibt Leistungen"/>
+  <meta property="og:title" content="Leistungen · Business Bildsprache · Sandra Seibt"/>
+  <meta property="og:description" content="Business Portrait, Brand Shooting, Social Media, Hotelfotografie — maßgeschneidert für dein Unternehmen."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://www.business-bildsprache.de/leistungen.html"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .page-hero { padding:12rem 0 6rem;text-align:center;position:relative;overflow:hidden; }
+    .page-hero-bg { position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 60%, var(--gold-pale) 0%, transparent 65%); }
+    .page-hero-eyebrow { font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;display:block; }
+    .page-hero-h { font-family:var(--f-serif);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.05;position:relative; }
+    .page-hero-h em { font-style:italic;color:var(--gold); }
+    .page-hero-sub { color:var(--white-2);max-width:580px;margin:2rem auto 0;font-size:1.05rem;line-height:1.8; }
+
+    .l-cards { padding:6rem 0;background:var(--bg-2); }
+    .l-card { display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;padding:4rem;border-radius:1.4rem;border:1px solid var(--border);margin-bottom:2rem;background:var(--bg);transition:background .4s; }
+    .l-card:hover { background:var(--surface); }
+    .l-card-img { border-radius:1.2rem;overflow:hidden;aspect-ratio:1/1; }
+    .l-card-img img { width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.16,1,.3,1); }
+    .l-card:hover .l-card-img img { transform:scale(1.04); }
+    .l-card-num { font-family:var(--f-display);font-size:4rem;color:var(--gold);opacity:.2;line-height:1;margin-bottom:1rem; }
+    .l-card-badge { font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:.3rem .9rem;border-radius:2rem;display:inline-block;margin-bottom:1.2rem; }
+    .l-card h2 { font-family:var(--f-serif);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:300;margin-bottom:.8rem; }
+    .l-card-target { font-size:.8rem;color:var(--white-3);letter-spacing:.08em;margin-bottom:1.2rem; }
+    .l-card p { color:var(--white-2);line-height:1.8;margin-bottom:1.5rem; }
+    .l-card ul { list-style:none;margin-bottom:2rem; }
+    .l-card ul li { font-size:.88rem;color:var(--white-2);padding:.35rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.6rem; }
+    .l-card ul li::before { content:'✦';color:var(--gold);font-size:.6rem;flex-shrink:0; }
+    .l-card:nth-child(even) .l-card-img { order:-1; }
+
+    .l-note { background:var(--surface);padding:5rem 0;text-align:center; }
+    .l-note h3 { font-family:var(--f-serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;margin-bottom:1rem; }
+    .l-note h3 em { font-style:italic;color:var(--gold); }
+    .l-note p { color:var(--white-2);max-width:580px;margin:0 auto 2.5rem; }
+    .btn-row { display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap; }
+
+    @media(max-width:900px){
+      .l-card { grid-template-columns:1fr;gap:2rem; }
+      .l-card:nth-child(even) .l-card-img { order:0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Business <span>Bildsprache</span></a>
+    <ul class="nav-links">
+      <li><a href="methode.html">Methode</a></li>
+      <li><a href="leistungen.html" style="color:var(--gold)">Leistungen</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="ueber-mich.html">Über mich</a></li>
+      <li><a href="hotelfotografie.html">Hotelfotografie</a></li>
+      <li><a href="quiz.html" style="color:var(--gold)">Quiz ✦</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+    <a href="kontakt.html" class="nav-cta">Gespräch anfragen</a>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <span class="page-hero-eyebrow r">Leistungen</span>
+      <h1 class="page-hero-h r">
+        Kein Schema F.<br/><em>Nur du.</em>
+      </h1>
+      <p class="page-hero-sub r">
+        Jedes Gespräch ist anders. Jeder Mensch ist anders.
+        Deshalb gibt es bei mir keine Pakete von der Stange —
+        sondern echte Zusammenarbeit, die wirklich zu dir passt.
+      </p>
+    </div>
+  </section>
+
+  <section class="l-cards">
+    <div class="container">
+
+      <div class="l-card r">
+        <div class="l-card-text">
+          <div class="l-card-num">01</div>
+          <span class="l-card-badge">Business Portrait</span>
+          <h2>Dein Gesicht. Deine Haltung.<br/><em>Dein erster Eindruck.</em></h2>
+          <p class="l-card-target">Für Inhaber · Geschäftsführer · Coaches · Einzelunternehmer</p>
+          <p>Ein authentisches Portrait ist keine Formalität. Es ist das Erste, was Menschen von dir sehen — und es entscheidet in Millisekunden, ob sie bleiben oder weiterscrollen. Ich sorge dafür, dass Menschen beim ersten Blick spüren: Da will ich mehr wissen.</p>
+          <ul>
+            <li>Ausführliches Vorgespräch &amp; Werte-Analyse</li>
+            <li>60–90 Min. Shooting an passenden Locations</li>
+            <li>20 finale, professionell bearbeitete Bilder</li>
+            <li>Styling-Beratung im Vorfeld</li>
+            <li>Online-Galerie mit Download</li>
+            <li>Nutzungsrechte für Web &amp; Print</li>
+          </ul>
+          <a href="kontakt.html" class="btn-fill">Jetzt anfragen</a>
+        </div>
+        <div class="l-card-img">
+          <img src="bilder/Portrait.jpg" alt="Business Portrait Sandra Seibt" loading="lazy"/>
+        </div>
+      </div>
+
+      <div class="l-card r">
+        <div class="l-card-text">
+          <div class="l-card-num">02</div>
+          <span class="l-card-badge">Brand Shooting</span>
+          <h2>Das volle<br/>Business Bildsprache Erlebnis.</h2>
+          <p class="l-card-target">Für inhabergeführte Unternehmen aller Branchen</p>
+          <p>Von der Tiefe — wer bist du wirklich — bis zu einer kompletten Bildwelt, die dein Business auf allen Ebenen sichtbar macht. Portrait, Raum, Details, Team, Atmosphäre. Für die, die aufgehört haben, sich zu verstecken.</p>
+          <ul>
+            <li>Strategie-Gespräch &amp; Mood-Board</li>
+            <li>Bildsprache-Konzept &amp; Location-Planung</li>
+            <li>Halbtages- bis Ganztages-Shooting</li>
+            <li>40–80 finale Bilder</li>
+            <li>Portrait, Raum, Details, Team</li>
+            <li>2–3 Locations / Settings möglich</li>
+          </ul>
+          <a href="kontakt.html" class="btn-fill">Jetzt anfragen</a>
+        </div>
+        <div class="l-card-img">
+          <img src="bilder/Brand Shooting.JPG" alt="Brand Shooting Business Bildsprache" loading="lazy"/>
+        </div>
+      </div>
+
+      <div class="l-card r">
+        <div class="l-card-text">
+          <div class="l-card-num">03</div>
+          <span class="l-card-badge">Store &amp; Raum</span>
+          <h2>Dein Raum hat<br/>eine Seele. Zeig sie.</h2>
+          <p class="l-card-target">Für Einzelhandel · Gastronomie · Hotellerie · Studios</p>
+          <p>Dein Raum erzählt deine Geschichte, bevor du auch nur ein Wort gesagt hast. Atmosphärische Fotografie, die Menschen anzieht — und sie das Gefühl gibt: Da muss ich hin. Da will ich sein.</p>
+          <ul>
+            <li>Konzept &amp; Vorbereitung</li>
+            <li>Interior &amp; Atmosphäre-Shots</li>
+            <li>Detailaufnahmen &amp; Produkte</li>
+            <li>Optionale Personen &amp; Team-Fotos</li>
+            <li>Lizenz für Web &amp; Print</li>
+          </ul>
+          <a href="kontakt.html" class="btn-fill">Jetzt anfragen</a>
+        </div>
+        <div class="l-card-img">
+          <img src="bilder/storefotografie1.jpg" alt="Store Fotografie Rhein-Main" loading="lazy"/>
+        </div>
+      </div>
+
+      <div class="l-card r">
+        <div class="l-card-text">
+          <div class="l-card-num">04</div>
+          <span class="l-card-badge">Event &amp; Reportage</span>
+          <h2>Manche Momente verdienen<br/>mehr als ein Smartphone-Foto.</h2>
+          <p class="l-card-target">Für Firmenevents · Eröffnungen · Messen · Teamevents</p>
+          <p>Dein Event lebt. Es atmet. Es hat Energie, Momente, Menschen. Lass diese Momente nicht einfach vergehen — ich halte sie fest, wie sie wirklich waren. Nicht gestellt. Nicht glatt. Echt.</p>
+          <ul>
+            <li>Vor-Ort-Planung &amp; Briefing</li>
+            <li>Dokumentarischer Reportage-Stil</li>
+            <li>Personen, Stimmung, Details</li>
+            <li>Halbtages- oder Tages-Option</li>
+            <li>Schnelle Lieferung</li>
+          </ul>
+          <a href="kontakt.html" class="btn-fill">Jetzt anfragen</a>
+        </div>
+        <div class="l-card-img">
+          <img src="bilder/eventfotografie1.jpg" alt="Event Fotografie Rhein-Main" loading="lazy"/>
+        </div>
+      </div>
+
+      <!-- KARTE 05 -->
+      <div class="l-card r">
+        <div class="l-card-text">
+          <div class="l-card-num">05</div>
+          <span class="l-card-badge">Social Media &amp; Content</span>
+          <h2>Dein Gesicht.<br/>Deine Bilder.<br/><em>Deine Stimme — sichtbar.</em></h2>
+          <p class="l-card-target">Für Restaurants · Hotels · Studios · Coaches · inhabergeführte Betriebe</p>
+          <p>Gute Bilder allein reichen nicht. Ich weiß, wie sie wirken müssen — auf Instagram, LinkedIn, in deiner Story. Als ausgebildete Social Media Managerin denke ich nicht nur in Motiven, sondern in Inhalten, die ankommen. Und bleiben.</p>
+          <ul>
+            <li>Content-Strategie &amp; Redaktionsplan</li>
+            <li>Social Media Shooting (Feed, Stories, Reels)</li>
+            <li>UGC — authentischer Content, der verkauft</li>
+            <li>Bildsprache für Instagram, LinkedIn &amp; Co.</li>
+            <li>Monatliche Content-Pakete auf Anfrage</li>
+          </ul>
+          <a href="kontakt.html" class="btn-fill">Jetzt anfragen</a>
+        </div>
+        <div class="l-card-img">
+          <img src="bilder/socialmedia.jpg" alt="Social Media Content Fotografie Sandra Seibt" loading="lazy"/>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="l-note">
+    <div class="container">
+      <h3 class="r">Alles beginnt mit einem<br/><em>kostenlosen Gespräch.</em></h3>
+      <p class="r">Weil ich dich kennenlernen möchte, bevor wir auch nur über Preise reden. 30 Minuten. Kein Druck. Einfach schauen, ob wir zueinander passen.</p>
+      <div class="btn-row r">
+        <a href="kontakt.html" class="btn-fill">Kostenloses Gespräch</a>
+        <a href="portfolio.html" class="btn-ghost">Portfolio ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Business <span>Bildsprache</span> · Sandra Seibt</span>
+        <div class="footer-links">
+          <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+          <a href="https://www.instagram.com/sandra.seibt" target="_blank">Instagram</a>
+        </div>
+        <span class="footer-copy">© 2026 Sandra Seibt</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+  const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+  (function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{ring.style.width='56px';ring.style.height='56px';});
+    el.addEventListener('mouseleave',()=>{ring.style.width='36px';ring.style.height='36px';});
+  });
+  document.getElementById('nav').classList.add('scrolled');
+  window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60));
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}}),{threshold:.1});
+  document.querySelectorAll('.r,.r-left,.r-right').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
