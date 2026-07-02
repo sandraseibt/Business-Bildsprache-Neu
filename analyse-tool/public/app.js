@@ -1,6 +1,7 @@
 const form = document.getElementById('analyze-form');
 const statusEl = document.getElementById('status');
-const resultEl = document.getElementById('result');
+const result1El = document.getElementById('result-1');
+const result2El = document.getElementById('result-2');
 const submitBtn = document.getElementById('submit-btn');
 
 function setStatus(message, isError) {
@@ -63,10 +64,12 @@ function renderMarkdown(text) {
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
-  resultEl.hidden = true;
-  resultEl.innerHTML = '';
+  result1El.hidden = true;
+  result2El.hidden = true;
+  result1El.innerHTML = '';
+  result2El.innerHTML = '';
   submitBtn.disabled = true;
-  setStatus('Analyse läuft … Website wird geladen und Screenshots werden ausgewertet (kann bis zu ~1 Minute dauern).');
+  setStatus('Analyse läuft … Website wird geladen, Screenshots werden erstellt/ausgewertet und beide Analysen nacheinander erzeugt (kann 1–2 Minuten dauern).');
 
   const formData = new FormData(form);
 
@@ -82,8 +85,10 @@ form.addEventListener('submit', async (event) => {
     }
 
     setStatus('');
-    resultEl.innerHTML = renderMarkdown(data.analysis || '');
-    resultEl.hidden = false;
+    result1El.innerHTML = `<h2 class="result-title">${data.analysis1Titel || 'Analyse 1'}</h2>` + renderMarkdown(data.analysis1 || '');
+    result2El.innerHTML = `<h2 class="result-title">${data.analysis2Titel || 'Analyse 2'}</h2>` + renderMarkdown(data.analysis2 || '');
+    result1El.hidden = false;
+    result2El.hidden = false;
   } catch (err) {
     setStatus(err.message, true);
   } finally {

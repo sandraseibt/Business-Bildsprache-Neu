@@ -1,7 +1,9 @@
-# Wahrnehmungs-Analyse-Tool
+# Außenwirkungs-Analyse-Tool
 
-Lokales Tool: Website-URL eingeben, optional Screenshots von Instagram und/oder
-LinkedIn hochladen, Analyse startet automatisch per Claude API. Läuft nur am
+Lokales Tool: Website-URL eingeben, optional Instagram-/LinkedIn-Profillink
+angeben und/oder Screenshots hochladen. Das Tool erstellt automatisch **zwei
+Analysen nacheinander** per Claude API: eine Marken-/UX-/Verkaufspsychologie-
+Analyse und eine Wahrnehmungsanalyse zum ersten Eindruck. Läuft nur am
 Rechner (Terminal + Browser), nicht am Handy.
 
 ## Einmalige Einrichtung
@@ -38,13 +40,19 @@ Danach im Browser öffnen: **http://localhost:3000**
    auf und macht selbst Screenshots (sichtbarer Bereich + gesamte Seite) –
    kein manueller Screenshot nötig.
 2. Branche optional angeben (z. B. "Coaching Human Design").
-3. Für Instagram und/oder LinkedIn eigene Screenshots hochladen (Profil,
-   Highlights, Feed-Ausschnitt genügen meist 2–4 Bilder). Diese Plattformen
-   blockieren automatisiertes Auslesen aktiv, daher der manuelle Upload.
-4. "Analyse starten" klicken. Nach ca. 20–60 Sekunden erscheint die
-   strukturierte Wahrnehmungs-Analyse (Erster Eindruck, Gefühl, Vertrauen,
-   Atmosphäre, Stärken, Potenzial, …) – reine Beobachtung, keine
-   Marketing-Bewertung.
+3. Instagram-/LinkedIn-Profillink optional eintragen und/oder eigene
+   Screenshots hochladen (Profil, Highlights, Feed-Ausschnitt genügen
+   meist 2–4 Bilder). Diese Plattformen blockieren automatisiertes Auslesen
+   aktiv, daher der manuelle Upload für die Bildauswertung.
+4. "Analyse starten" klicken. Nach ca. 1–2 Minuten erscheinen zwei
+   strukturierte Analysen nacheinander:
+   - **Analyse 1** – Marken-, UX- und Verkaufspsychologie (Erster Eindruck,
+     Positionierung, Vertrauen, Bildsprache, Texte, Website, Instagram,
+     Konsistenz, Kaufwahrscheinlichkeit mit 1–10-Bewertungen, Stärken/
+     Schwächen).
+   - **Analyse 2** – Wahrnehmungspsychologie zum ersten Eindruck (Gefühl,
+     Atmosphäre, Persönlichkeit, Vertrauen, Potenzial) – reine Beobachtung,
+     keine Marketing-Bewertung.
 
 ## Hinweise
 

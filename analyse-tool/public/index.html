@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Wahrnehmungs-Analyse</title>
+<title>Außenwirkungs-Analyse</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <main>
-  <h1>Wahrnehmungs-Analyse</h1>
+  <h1>Außenwirkungs-Analyse</h1>
   <p class="intro">
-    Website-URL eingeben, optional Screenshots von Instagram und/oder LinkedIn hochladen
-    (Profil, Highlights, Feed-Ausschnitt genügen). Die Analyse folgt ausschließlich der
-    Außenwirkung auf einen neuen Besucher – keine Marketingtipps, keine Bewertung.
+    Website-URL eingeben, optional Instagram-/LinkedIn-Profillink angeben und/oder
+    Screenshots hochladen (Profil, Highlights, Feed-Ausschnitt genügen). Es werden
+    automatisch zwei Analysen nacheinander erstellt: eine Marken-/UX-Analyse und eine
+    Wahrnehmungsanalyse zum ersten Eindruck.
   </p>
 
   <form id="analyze-form">
@@ -27,8 +28,18 @@
     </label>
 
     <label>
+      Instagram-Profil-Link (optional)
+      <input type="text" name="instagramUrl" placeholder="https://instagram.com/..." />
+    </label>
+
+    <label>
       Instagram-Screenshots (optional)
       <input type="file" name="instagram" accept="image/*" multiple />
+    </label>
+
+    <label>
+      LinkedIn-Profil-Link (optional)
+      <input type="text" name="linkedinUrl" placeholder="https://linkedin.com/in/..." />
     </label>
 
     <label>
@@ -40,7 +51,8 @@
   </form>
 
   <div id="status" class="status" hidden></div>
-  <article id="result" class="result" hidden></article>
+  <article id="result-1" class="result" hidden></article>
+  <article id="result-2" class="result" hidden></article>
 </main>
 
 <script src="app.js"></script>

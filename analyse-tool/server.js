@@ -4,7 +4,7 @@ const express = require('express');
 const multer = require('multer');
 const Anthropic = require('@anthropic-ai/sdk');
 const { chromium } = require('playwright');
-const { buildPrompt } = require('./prompt');
+const { buildWahrnehmungsPrompt, buildMarkenstrategiePrompt } = require('./prompt');
 
 const app = express();
 const upload = multer({
@@ -60,6 +60,8 @@ app.post(
 
       const websiteUrlRaw = (req.body.websiteUrl || '').trim();
       const branche = (req.body.branche || '').trim();
+      const instagramUrl = (req.body.instagramUrl || '').trim();
+      const linkedinUrl = (req.body.linkedinUrl || '').trim();
       if (!websiteUrlRaw) {
         return res.status(400).json({ error: 'Website-URL fehlt.' });
       }
@@ -75,47 +77,63 @@ app.post(
         return res.status(502).json({ error: `Website konnte nicht geladen werden: ${err.message}` });
       }
 
-      const content = [];
-      content.push({
-        type: 'text',
-        text: buildPrompt({
-          branche,
-          websiteUrl,
-          hasInstagram: instaFiles.length > 0,
-          hasLinkedin: linkedinFiles.length > 0,
-        }),
-      });
-
-      content.push({ type: 'text', text: `\n\n--- WEBSITE (${websiteUrl}) ---\nSichtbarer Text (Auszug):\n${shots.text}` });
-      content.push({ type: 'text', text: '\nScreenshot – sichtbarer Bereich beim ersten Laden (Above the Fold):' });
-      content.push(imageBlock(shots.aboveFold, 'image/jpeg'));
+      // Von beiden Analysen gemeinsam genutztes Bild-/Textmaterial.
+      const media = [];
+      media.push({ type: 'text', text: `\n\n--- WEBSITE (${websiteUrl}) ---\nSichtbarer Text (Auszug):\n${shots.text}` });
+      media.push({ type: 'text', text: '\nScreenshot – sichtbarer Bereich beim ersten Laden (Above the Fold):' });
+      media.push(imageBlock(shots.aboveFold, 'image/jpeg'));
       if (shots.fullPage) {
-        content.push({ type: 'text', text: '\nScreenshot – gesamte Seite (gescrollt):' });
-        content.push(imageBlock(shots.fullPage, 'image/jpeg'));
+        media.push({ type: 'text', text: '\nScreenshot – gesamte Seite (gescrollt):' });
+        media.push(imageBlock(shots.fullPage, 'image/jpeg'));
       }
-
       if (instaFiles.length) {
-        content.push({ type: 'text', text: '\n\n--- INSTAGRAM-PROFIL (Screenshots) ---' });
-        instaFiles.forEach((f) => content.push(imageBlock(f.buffer, f.mimetype)));
+        media.push({ type: 'text', text: '\n\n--- INSTAGRAM-PROFIL (Screenshots) ---' });
+        instaFiles.forEach((f) => media.push(imageBlock(f.buffer, f.mimetype)));
       }
       if (linkedinFiles.length) {
-        content.push({ type: 'text', text: '\n\n--- LINKEDIN-PROFIL (Screenshots) ---' });
-        linkedinFiles.forEach((f) => content.push(imageBlock(f.buffer, f.mimetype)));
+        media.push({ type: 'text', text: '\n\n--- LINKEDIN-PROFIL (Screenshots) ---' });
+        linkedinFiles.forEach((f) => media.push(imageBlock(f.buffer, f.mimetype)));
       }
 
       const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-      const message = await anthropic.messages.create({
-        model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5',
-        max_tokens: 4096,
-        messages: [{ role: 'user', content }],
+
+      async function runAnalysis(promptText) {
+        const message = await anthropic.messages.create({
+          model: process.env.ANTHROPIC_MODEL || 'claude-sonnet-5',
+          max_tokens: 4096,
+          messages: [{ role: 'user', content: [{ type: 'text', text: promptText }, ...media] }],
+        });
+        return message.content
+          .filter((block) => block.type === 'text')
+          .map((block) => block.text)
+          .join('\n');
+      }
+
+      const markenstrategiePrompt = buildMarkenstrategiePrompt({
+        branche,
+        websiteUrl,
+        instagramUrl,
+        linkedinUrl,
+        hasInstagramShots: instaFiles.length > 0,
+        hasLinkedinShots: linkedinFiles.length > 0,
+      });
+      const wahrnehmungsPrompt = buildWahrnehmungsPrompt({
+        branche,
+        websiteUrl,
+        hasInstagram: instaFiles.length > 0,
+        hasLinkedin: linkedinFiles.length > 0,
       });
 
-      const analysis = message.content
-        .filter((block) => block.type === 'text')
-        .map((block) => block.text)
-        .join('\n');
+      // Nacheinander ausführen, wie gewünscht: erst Marken-/UX-Analyse, dann Wahrnehmungsanalyse.
+      const analysis1 = await runAnalysis(markenstrategiePrompt);
+      const analysis2 = await runAnalysis(wahrnehmungsPrompt);
 
-      res.json({ analysis });
+      res.json({
+        analysis1,
+        analysis1Titel: 'Analyse 1 · Marken-, UX- & Verkaufspsychologie',
+        analysis2,
+        analysis2Titel: 'Analyse 2 · Wahrnehmungspsychologie (erster Eindruck)',
+      });
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: err.message || 'Unbekannter Fehler.' });
