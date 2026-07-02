@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wahrnehmungs-Analyse</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main>
+  <h1>Wahrnehmungs-Analyse</h1>
+  <p class="intro">
+    Website-URL eingeben, optional Screenshots von Instagram und/oder LinkedIn hochladen
+    (Profil, Highlights, Feed-Ausschnitt genügen). Die Analyse folgt ausschließlich der
+    Außenwirkung auf einen neuen Besucher – keine Marketingtipps, keine Bewertung.
+  </p>
+
+  <form id="analyze-form">
+    <label>
+      Website-URL *
+      <input type="text" name="websiteUrl" placeholder="https://beispiel.de" required />
+    </label>
+
+    <label>
+      Branche
+      <input type="text" name="branche" placeholder="z. B. Coaching, Hotellerie, Fotografie" />
+    </label>
+
+    <label>
+      Instagram-Screenshots (optional)
+      <input type="file" name="instagram" accept="image/*" multiple />
+    </label>
+
+    <label>
+      LinkedIn-Screenshots (optional)
+      <input type="file" name="linkedin" accept="image/*" multiple />
+    </label>
+
+    <button type="submit" id="submit-btn">Analyse starten</button>
+  </form>
+
+  <div id="status" class="status" hidden></div>
+  <article id="result" class="result" hidden></article>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
