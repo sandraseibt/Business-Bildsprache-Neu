@@ -259,6 +259,25 @@ body {
   content: '—'; position: absolute; left: 0; color: var(--gold);
 }
 
+/* ── PROMISE LIST (Was du mitnimmst) ────────── */
+.promise-list { list-style: none; margin: 1.8rem 0 2.2rem; }
+.promise-list li {
+  font-size: .96rem; color: var(--ink-2); line-height: 1.6;
+  padding: .95rem 0 .95rem 1.6rem;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.promise-list li:first-child { padding-top: 0; }
+.promise-list li:last-child { border-bottom: none; }
+.promise-list li::before {
+  content: '—'; position: absolute; left: 0; color: var(--gold);
+}
+.promise-close {
+  font-family: var(--f-serif); font-style: italic;
+  font-size: 1.3rem; color: var(--gold-dark);
+  margin-top: .5rem;
+}
+
 /* running footer label per page-flow start */
 .kicker {
   font-size: .62rem; letter-spacing: .22em; text-transform: uppercase;
@@ -328,6 +347,20 @@ body {
   <h2 class="simple-h">Bevor du <span>anfängst</span></h2>
   <p class="p">Dieses Buch ersetzt keine Therapie und keine Beratung. Es ist keine Anleitung mit Erfolgsgarantie, sondern eine Einladung, dir selbst wieder näherzukommen.</p>
   <p class="p">Lies es so, wie es für dich passt. Von vorne nach hinten, oder spring direkt dahin, was dich gerade am meisten ruft. Wenn du heute nur eine Seite schaffst, ist das die richtige Seite für heute.</p>
+</div>
+
+<!-- ═══════════ WAS DU MITNIMMST ═══════════ -->
+<div class="page-flow">
+  <h2 class="simple-h">Was du aus diesem Buch <span>mitnimmst</span></h2>
+  <p class="p">Dieses Buch verspricht dir kein neues Leben. Aber wenn du es liest und die Übungen wirklich machst, hast du am Ende mehr als beim Aufschlagen:</p>
+  <ul class="promise-list">
+    <li>Klarheit darüber, welche Rolle in deinem Leben gerade den meisten Raum einnimmt</li>
+    <li>Eine Sprache für das, was sich in deinen Beziehungen gerade verändert, ohne dass etwas kaputt sein muss</li>
+    <li>Einen ehrlicheren, respektvolleren Umgang mit deinem Körper</li>
+    <li>Eine Sache, die du all die Jahre zurückgestellt hast, schon einmal ausprobiert, nicht nur geplant</li>
+    <li>Einen konkreten nächsten Schritt, den du wirklich gehst</li>
+  </ul>
+  <p class="promise-close">Kein Umbruch. Ein Anfang.</p>
 </div>
 
 <!-- ═══════════ INHALT ═══════════ -->
